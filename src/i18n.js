@@ -175,7 +175,7 @@ export const dict = {
 				"Une question, un projet d'événement ? Notre équipe vous répond rapidement pour organiser une visite du lieu ou discuter de votre besoin.",
 
 			reasonsEyebrow: 'Nos engagements',
-			// reasonsTitle: 'Pourquoi choisir Ora Events ?',
+			reasonsTitle: 'Pourquoi choisir Ora Events ?',
 
 			reasons: [
 				{
