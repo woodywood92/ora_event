@@ -16,9 +16,13 @@ export default function Contact() {
 
 			<Reveal className="contact-reasons">
 				<div className="contact-reasons__header">
-					<span>{t.contactPage.reasonsEyebrow}</span>
+					<h3 className="contact-reasons__title">
+						{t.contactPage.reasonsTitle}
+					</h3>
+					<span className="contact-reasons__eyebrow">
+						{t.contactPage.reasonsEyebrow}
+					</span>
 				</div>
-
 				<div className="contact-reasons__grid">
 					{t.contactPage.reasons.map((reason, index) => (
 						<div className="contact-reason" key={reason.title}>
