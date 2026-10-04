@@ -1,0 +1,13 @@
+.app-root {
+	min-height: 100vh;
+	background: #fafaf8;
+	color: #15140f;
+	font-family: 'Inter', sans-serif;
+	transition:
+		background-color 0.3s,
+		color 0.3s;
+}
+.dark .app-root {
+	background: #262624;
+	color: #ededed;
+}

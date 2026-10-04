@@ -1,0 +1,154 @@
+.rse-hero {
+	padding: 128px 24px 64px;
+	max-width: 760px;
+	margin: 0 auto;
+	text-align: center;
+}
+.rse-hero__badge {
+	width: 200px;
+	max-width: 60%;
+	margin: 0 auto 32px;
+	display: block;
+}
+.rse-hero__title {
+	font-family: 'Space Grotesk', sans-serif;
+	font-size: 28px;
+	font-weight: 700;
+	margin-bottom: 24px;
+	line-height: 1.25;
+}
+@media (min-width: 768px) {
+	.rse-hero__title {
+		font-size: 38px;
+	}
+}
+.rse-hero__intro {
+	font-size: 15px;
+	line-height: 1.7;
+	color: #4a4a44;
+}
+.dark .rse-hero__intro {
+	color: #b7b7b7;
+}
+
+.rse-pillars {
+	padding: 0 24px 80px;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+.rse-pillars__eyebrow {
+	font-size: 12px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: #c47b3a;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.rse-pillars__title {
+	font-family: 'Space Grotesk', sans-serif;
+	font-size: 26px;
+	font-weight: 700;
+	text-align: center;
+	margin-bottom: 48px;
+}
+.rse-pillars__grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 24px;
+}
+@media (min-width: 768px) {
+	.rse-pillars__grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+.rse-pillar {
+	padding: 28px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 14px;
+}
+.dark .rse-pillar {
+	border-color: rgba(255, 255, 255, 0.1);
+}
+
+.rse-pillar__icon {
+	width: 44px;
+	height: 44px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 10px;
+	margin-bottom: 18px;
+}
+/* Couleur distincte par carte, comme la grille de référence */
+.rse-pillar:nth-child(1) .rse-pillar__icon {
+	background: #fce7e8;
+	color: #d9544f;
+}
+.rse-pillar:nth-child(2) .rse-pillar__icon {
+	background: #e6f0fb;
+	color: #3b82c4;
+}
+.rse-pillar:nth-child(3) .rse-pillar__icon {
+	background: #e8f5e9;
+	color: #4caf6d;
+}
+.rse-pillar:nth-child(4) .rse-pillar__icon {
+	background: #fff2df;
+	color: #e08a2c;
+}
+.rse-pillar:nth-child(5) .rse-pillar__icon {
+	background: #f1e9fb;
+	color: #8b5cf6;
+}
+.rse-pillar:nth-child(6) .rse-pillar__icon {
+	background: #fdeaea;
+	color: #e05b5b;
+}
+.rse-pillar:nth-child(7) .rse-pillar__icon {
+	background: #e3f6f2;
+	color: #2ca58d;
+}
+
+.rse-pillar__title {
+	font-family: 'Space Grotesk', sans-serif;
+	font-weight: 700;
+	font-size: 15px;
+	margin-bottom: 8px;
+}
+
+.rse-pillar__text {
+	font-size: 13.5px;
+	line-height: 1.65;
+	color: #4a4a44;
+}
+.dark .rse-pillar__text {
+	color: #b7b7b7;
+}
+
+.rse-closing {
+	padding: 80px 24px 120px;
+	max-width: 640px;
+	margin: 0 auto;
+	text-align: center;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.dark .rse-closing {
+	border-color: rgba(255, 255, 255, 0.1);
+}
+.rse-closing__title {
+	font-family: 'Space Grotesk', sans-serif;
+	font-size: 20px;
+	font-weight: 700;
+	margin: 40px 0 16px;
+	line-height: 1.4;
+}
+.rse-closing__text {
+	font-size: 14px;
+	line-height: 1.7;
+	color: #4a4a44;
+}
+.dark .rse-closing__text {
+	color: #b7b7b7;
+}

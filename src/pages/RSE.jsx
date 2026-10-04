@@ -1,37 +1,56 @@
-import React from "react";
-import { useSite } from "../context/SiteContext";
-import Reveal from "../components/Reveal";
+import React from 'react';
+import { useSite } from '../context/SiteContext';
+import Reveal from '../components/Reveal';
+import '../ressources/RSE.css';
+import fairscoreImg from '../ressources/images/fairscore.png';
 
 export default function RSE() {
-  const { t } = useSite();
+	const { t } = useSite();
+	const r = t.rsePage;
 
-  return (
-    <div className="pt-32 pb-24">
-      <section className="px-6 md:px-10 max-w-3xl mx-auto text-center mb-16">
-        <Reveal>
-          <h1 className="font-display text-3xl md:text-5xl font-bold mb-6">{t.rsePage.title}</h1>
-        </Reveal>
-        <Reveal className="mt-4">
-          <p className="text-gray-500 dark:text-[#8a8a8a] leading-relaxed">{t.rsePage.intro}</p>
-        </Reveal>
-      </section>
+	return (
+		<div>
+			<section className="rse-hero">
+				<Reveal>
+					<h1 className="rse-hero__title">{r.title}</h1>
+				</Reveal>
+				<Reveal>
+					<p className="rse-hero__intro">{r.intro}</p>
+				</Reveal>
+			</section>
 
-      <section className="px-6 md:px-10 max-w-5xl mx-auto grid sm:grid-cols-2 gap-8">
-        {t.rsePage.pillars.map((p) => (
-          <Reveal key={p.title}>
-            <div className="border border-black/10 dark:border-white/10 p-6 h-full">
-              <h3 className="font-display text-lg font-bold mb-2 text-[#5f7d6f] dark:text-[#8FA79B]">{p.title}</h3>
-              <p className="text-sm text-gray-600 dark:text-[#B7B7B7] leading-relaxed">{p.desc}</p>
-            </div>
-          </Reveal>
-        ))}
-      </section>
+			<section className="rse-pillars">
+				<Reveal>
+					<h2 className="rse-pillars__title">{r.pillarsTitle}</h2>
+				</Reveal>
+				<div className="rse-pillars__grid">
+					{r.pillars.map((p) => (
+						<Reveal key={p.title}>
+							<div className="rse-pillar">
+								<span className="rse-pillar__icon">{p.icon}</span>
+								<div>
+									<p className="rse-pillar__title">{p.title}</p>
+									<p className="rse-pillar__text">{p.desc}</p>
+								</div>
+							</div>
+						</Reveal>
+					))}
+				</div>
+			</section>
 
-      <section className="px-6 md:px-10 max-w-3xl mx-auto mt-16">
-        <Reveal>
-          <p className="text-xs text-gray-400 dark:text-[#6b6b6b] text-center italic">{t.rsePage.note}</p>
-        </Reveal>
-      </section>
-    </div>
-  );
+			<section className="rse-closing">
+				<Reveal>
+					<Reveal>
+						<img
+							src={fairscoreImg}
+							alt={r.badge}
+							className="mx-auto rounded-xl shadow-md"
+						/>
+					</Reveal>
+					<h2 className="rse-closing__title">{r.closingTitle}</h2>
+					<p className="rse-closing__text">{r.closingText}</p>
+				</Reveal>
+			</section>
+		</div>
+	);
 }

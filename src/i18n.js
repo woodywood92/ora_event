@@ -7,6 +7,7 @@ export const dict = {
 			rse: 'RSE',
 			contact: 'Contact',
 			visite: 'Demander une visite',
+			enSavoirPlus: 'En savoir plus',
 		},
 		slides: [
 			{
@@ -125,49 +126,58 @@ export const dict = {
 				"Deux espaces modulables, un accompagnement technique et logistique complet — pensés pour s'adapter à tous vos formats d'événements professionnels.",
 			detailTitle: 'En détail',
 		},
-		rseTtile: 'Our CSR commitments',
-		rseIntro:
-			'At Le Carré Vaugirard, we believe an event can be elegant, welcoming and responsible at the same time.',
-		rseIntro2:
-			'Our CSR approach has been assessed by FairScore at A- level. This recognition reflects the commitments we put into practice every day, from our choice of partners to resource management and the way we design each event.',
-		rseDetail: 'Discover our commitments',
-		rseCommitments: {
-			inclusion: {
-				title: 'Inclusion',
-				desc: 'We work with Le Trèfle, a company restaurant that promotes employment for people with intellectual disabilities.',
-			},
-			waste: {
-				title: 'Waste reduction',
-				desc: 'We favour reusable solutions and limit packaging and single-use plastic throughout the event process.',
-			},
-			partners: {
-				title: 'Committed partners',
-				desc: 'We favour local partners, short supply chains and seasonal products and menus.',
-			},
-		},
 		rsePage: {
-			title: 'Notre engagement RSE',
+			badge: 'FairScore A-',
+			title:
+				'Un lieu événementiel engagé au cœur du 15ᵉ arrondissement de Paris',
 			intro:
-				"Le Carré Vaugirard s'inscrit dans une démarche responsable, à toutes les étapes de l'organisation de vos événements.",
+				'Au Carré Vaugirard, nous sommes convaincus qu’un événement peut être à la fois élégant, convivial et responsable. Une reconnaissance qui vient saluer des engagements que nous faisons vivre au quotidien, dans le choix de nos partenaires, la gestion de nos ressources et notre façon de concevoir chaque événement.',
+			introHome:
+				'Notre démarche RSE s’inscrit dans nos choix quotidiens : partenaires, gestion des ressources et conception de chaque événement.',
+			pillarsTitle: 'Des engagements qui se vivent au quotidien',
 			pillars: [
 				{
-					title: 'Accessibilité',
-					desc: 'Des espaces conformes aux normes ERP et accessibles PMR, pour accueillir tous les publics dans de bonnes conditions.',
+					icon: '🍽️',
+					title: 'Lutter contre le gaspillage alimentaire',
+					desc: "Lorsque cela est possible, les surplus alimentaires peuvent être redistribués à des personnes sans-abri à proximité du Carré Vaugirard, afin que ce qui n'a pas été consommé puisse bénéficier à ceux qui en ont besoin.",
+				},
+
+				{
+					icon: '🏢',
+					title: 'Un bâtiment certifié HQE',
+					desc: "Le Carré Vaugirard s'inscrit dans un bâtiment certifié Haute Qualité Environnementale (HQE), une certification qui évalue notamment la performance énergétique, la gestion de l'eau et des ressources, ainsi que le confort et la qualité des espaces intérieurs.",
 				},
 				{
-					title: 'Sobriété énergétique',
-					desc: "Des équipements techniques pensés pour limiter la consommation d'énergie lors de vos événements.",
+					icon: '♻️',
+					title: 'Des événements pensés pour générer moins de déchets',
+					desc: "De la préparation au démontage, nous cherchons à réduire l'empreinte de chaque événement : limitation des emballages et du plastique à usage unique, recours à des solutions réutilisables et choix de prestations pensées pour éviter le superflu.",
 				},
 				{
-					title: 'Circuits courts',
-					desc: 'Une attention portée au choix de prestataires locaux pour la restauration et les services associés.',
+					icon: '🥕',
+					title: 'Des partenaires engagés et locaux',
+					desc: 'Nous privilégions des partenaires engagés, les circuits courts, les produits et menus de saison, ainsi que les entreprises de proximité.',
 				},
 				{
-					title: 'Réduction des déchets',
-					desc: "Des pratiques de tri et de réduction du gaspillage mises en place sur l'ensemble du site.",
+					icon: '🚶',
+					title: 'Des livraisons plus responsables',
+					desc: 'Nous favorisons autant que possible des modes de livraison à faible impact. Certaines sont même réalisées à pied !',
+				},
+				{
+					icon: '🤝',
+					title: "L'inclusion",
+					desc: "Nous travaillons avec Le Trèfle, restaurant d'entreprise qui favorise l'emploi de personnes en situation de handicap mental.",
+				},
+
+				{
+					icon: '🌱',
+					title: "Des produits d'entretien éco-responsables",
+					desc: "Notre engagement se poursuit jusque dans l'entretien quotidien de nos espaces, avec le choix de produits plus respectueux de l'environnement.",
 				},
 			],
-			note: "Cette page a vocation à être complétée avec les engagements précis et les partenaires RSE d'Ora Events.",
+			closingTitle:
+				"Un FairScore A-, c'est une reconnaissance. Mais surtout, c'est une invitation à continuer.",
+			closingText:
+				'Parce que nous sommes convaincus que la RSE se joue dans les grandes décisions comme dans les petits gestes, nous continuons à faire évoluer nos pratiques pour proposer des événements toujours plus responsables.',
 		},
 		contactPage: {
 			title: 'Contactez-nous',
@@ -199,8 +209,6 @@ export const dict = {
 					text: 'Réunissez tous les temps forts de votre événement en une seule adresse : accueil café, réunions, plénières, ateliers, déjeuners, cocktails et soirées. Le Carré Vaugirard vous accueille tout au long de la journée et jusque dans la soirée.',
 				},
 			],
-
-			// ... le reste de contactPage
 		},
 	},
 	en: {
@@ -211,6 +219,7 @@ export const dict = {
 			rse: 'CSR',
 			contact: 'Contact',
 			visite: 'Request a visit',
+			enSavoirPlus: 'Learn more',
 		},
 		slides: [
 			{ n: '01', title: 'A premium event venue in the heart of Paris' },
@@ -245,9 +254,6 @@ export const dict = {
 		},
 		lieuxTitle: 'Our places',
 		lieuxIntroTitle: 'Two spaces, endless possibilities',
-		lieuxIntro:
-			'At Carré Vaugirard, two complementary spaces make it possible to create tailor-made events, from intimate meetings for 10 people to professional events welcoming up to 400 guests.',
-		lieuxDetail: 'Learn more',
 		lieuxIntro:
 			'At Carré Vaugirard, two complementary spaces make it possible to create tailor-made events, from intimate meetings for 10 people to professional events welcoming up to 400 guests.',
 		lieuxDetail: 'Learn more',
@@ -310,34 +316,108 @@ export const dict = {
 				'Two modular venues, with full technical and logistical support — designed to adapt to every professional event format.',
 			detailTitle: 'In detail',
 		},
+		rseTtile: 'Our CSR commitments',
+		rseIntro:
+			'At Le Carré Vaugirard, we believe an event can be elegant, welcoming and responsible at the same time.',
+		rseIntro2:
+			'Our CSR approach has been assessed by FairScore at A- level. This recognition reflects the commitments we put into practice every day, from our choice of partners to resource management and the way we design each event.',
+		rseDetail: 'Discover our commitments',
+		rseCommitments: {
+			inclusion: {
+				title: 'Inclusion',
+				desc: 'We work with Le Trèfle, a company restaurant that promotes employment for people with intellectual disabilities.',
+			},
+			waste: {
+				title: 'Waste reduction',
+				desc: 'We favour reusable solutions and limit packaging and single-use plastic throughout the event process.',
+			},
+			partners: {
+				title: 'Committed partners',
+				desc: 'We favour local partners, short supply chains and seasonal products and menus.',
+			},
+		},
 		rsePage: {
-			title: 'Our CSR commitment',
+			badge: 'FairScore A-',
+			title:
+				"A committed event venue in the heart of Paris' 15th arrondissement",
 			intro:
-				'Le Carré Vaugirard takes a responsible approach at every stage of organising your events.',
+				'At Carré Vaugirard, we believe that an event can be elegant, welcoming, and responsible at the same time. This recognition highlights the commitments we uphold every day through our choice of partners, the way we manage our resources, and our approach to designing every event.',
+			introHome:
+				'Our CSR approach is reflected in the choices we make every day:  partners, resource management, and the design of every event.',
+			pillarsTitle: 'Commitments we live by every day',
 			pillars: [
 				{
-					title: 'Accessibility',
-					desc: 'ERP-compliant, wheelchair-accessible spaces, welcoming all audiences under good conditions.',
+					icon: '🍽️',
+					title: 'Fighting food waste',
+					desc: 'Where possible, surplus food is redistributed to people experiencing homelessness near Le Carré Vaugirard, so nothing goes to waste.',
 				},
 				{
-					title: 'Energy efficiency',
-					desc: 'Technical equipment designed to limit energy consumption during your events.',
+					icon: '🏢',
+					title: 'An HQE-certified building',
+					desc: 'Le Carré Vaugirard is part of a High Environmental Quality (HQE) certified building, assessing energy performance, water and resource management, and indoor comfort and quality.',
 				},
 				{
-					title: 'Local sourcing',
-					desc: 'Careful selection of local caterers and service providers.',
+					icon: '♻️',
+					title: 'Events designed to generate less waste',
+					desc: "From setup to teardown, we work to reduce each event's footprint: limiting packaging and single-use plastic, using reusable solutions, and choosing services designed to avoid excess.",
 				},
 				{
-					title: 'Waste reduction',
-					desc: 'Sorting and waste-reduction practices in place across the venue.',
+					icon: '🥕',
+					title: 'Committed, local partners',
+					desc: 'We favour committed partners, local sourcing, seasonal products and menus, and nearby businesses.',
+				},
+				{
+					icon: '🚶',
+					title: 'More responsible deliveries',
+					desc: 'We favour low-impact delivery methods wherever possible — some are even made on foot!',
+				},
+				{
+					icon: '🤝',
+					title: 'Inclusion',
+					desc: 'We work with Le Trèfle, a company restaurant supporting employment for people with mental disabilities.',
+				},
+
+				{
+					icon: '🌱',
+					title: 'Eco-friendly cleaning products',
+					desc: 'Our commitment extends to the daily upkeep of our spaces, with more environmentally friendly cleaning products.',
 				},
 			],
-			note: "This page is intended to be completed with Ora Events' precise commitments and CSR partners.",
+			closingTitle:
+				"A FairScore A- rating is a recognition. But above all, it's an invitation to keep going.",
+			closingText:
+				'Because we believe CSR happens through both major decisions and small daily gestures, we keep evolving our practices to offer ever more responsible events.',
 		},
 		contactPage: {
 			title: 'Get in touch',
 			intro:
 				'A question, an event project? Our team responds quickly to arrange a venue visit or discuss your needs.',
+
+			reasonsEyebrow: 'Our commitments',
+			reasonsTitle: 'Why choose Ora Events?',
+
+			reasons: [
+				{
+					title: 'Prestigious, modular spaces',
+					text: 'Elegant spaces with high-end finishes, fully modular to your needs. Refined furniture, the latest technical equipment and tailor-made configurations adapt to every event format.',
+				},
+				{
+					title: 'A complete offer',
+					text: '360° support to simplify organising your event: venue rental, catering, technical services, bespoke decoration, entertainment and additional services.',
+				},
+				{
+					title: 'A prime location',
+					text: "In the heart of Paris' 15th arrondissement, Le Carré Vaugirard offers excellent accessibility, right next to metro lines 6 and 12 and Gare Montparnasse. The venue also has an underground car park and a dedicated bike space.",
+				},
+				{
+					title: 'A team dedicated to your event',
+					text: 'A project manager supports you at every step, from preparation through to the day itself, with an on-site presence to ensure your event runs smoothly.',
+				},
+				{
+					title: 'A true single-venue experience',
+					text: 'Bring together every key moment of your event under one address: coffee reception, meetings, plenaries, workshops, lunches, cocktails and evening events. Le Carré Vaugirard welcomes you throughout the day and into the evening.',
+				},
+			],
 		},
 	},
 };

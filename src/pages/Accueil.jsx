@@ -174,16 +174,10 @@ function RSE({ t }) {
 				<Reveal>
 					<div className="rse__content">
 						<div className="rse__intro">
-							<p>{t.rsePage.intro}</p>
-
-							<p>
-								Notre démarche RSE s’inscrit dans nos choix quotidiens :
-								partenaires, gestion des ressources et conception de chaque
-								événement.
-							</p>
+							<p>{t.rsePage.introHome}</p>
 
 							<Link to="/rse" className="rse__link">
-								En savoir plus <ArrowRight size={15} />
+								{t.nav.enSavoirPlus} <ArrowRight size={15} />
 							</Link>
 						</div>
 

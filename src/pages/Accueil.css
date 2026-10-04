@@ -358,6 +358,7 @@
 	font-weight: 500;
 	font-size: 14px;
 	padding: 12px 24px;
+	border-radius: 16px;
 }
 .cta__btn:hover {
 	opacity: 0.85;
@@ -408,6 +409,7 @@
 	display: flex;
 	align-items: center;
 	gap: 14px;
+	border-radius: 16px;
 	padding: 12px 18px;
 	border: 1px solid var(--border);
 	background: rgba(255, 255, 255, 0.5);
@@ -471,6 +473,7 @@
 
 .rse__commitments {
 	display: flex;
+	border-radius: 16px;
 	flex-direction: column;
 	border: 1px solid var(--border);
 }

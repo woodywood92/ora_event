@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#6E4423"/>
+      <stop offset="0.5" stop-color="#A66B36"/>
+      <stop offset="1" stop-color="#D9A46B"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" stroke="url(#g)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- baseline -->
+    <line x1="4" y1="50" x2="60" y2="50"/>
+    <!-- left buildings -->
+    <rect x="6" y="30" width="7" height="20"/>
+    <rect x="13" y="22" width="7" height="28"/>
+    <rect x="20" y="34" width="6" height="16"/>
+    <!-- center domed building -->
+    <path d="M26 50 V26 h12 V50"/>
+    <path d="M28 26 a4 4 0 0 1 8 0"/>
+    <line x1="32" y1="22" x2="32" y2="16"/>
+    <circle cx="32" cy="14" r="1.6" fill="url(#g)"/>
+    <!-- right buildings -->
+    <rect x="38" y="34" width="6" height="16"/>
+    <rect x="44" y="24" width="7" height="26"/>
+    <rect x="51" y="32" width="7" height="18"/>
+  </g>
+</svg>

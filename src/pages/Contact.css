@@ -13,7 +13,7 @@
 }
 
 .dark .contact-page {
-	--contact-bg: #111113;
+	--contact-bg: #262624;
 	--contact-text: #ededed;
 	--contact-muted: #b7b7b7;
 	--contact-border: rgba(255, 255, 255, 0.1);
@@ -21,7 +21,6 @@
 }
 
 /* INTRO */
-
 .contact-intro {
 	max-width: 672px;
 	margin: 0 auto 64px;
@@ -157,6 +156,7 @@
 	flex-direction: column;
 	gap: 16px;
 	padding: 32px;
+	border-radius: 16px;
 	background: var(--contact-bg);
 	border: 1px solid var(--contact-border);
 }
@@ -171,6 +171,7 @@
 	font-family: inherit;
 	font-size: 14px;
 	outline: none;
+	border-radius: 16px;
 	transition: border-color 0.2s ease;
 }
 
@@ -202,6 +203,7 @@
 	font-size: 14px;
 	font-weight: 500;
 	cursor: pointer;
+	border-radius: 16px;
 	transition: opacity 0.2s ease;
 }
 

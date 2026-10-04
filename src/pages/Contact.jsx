@@ -65,7 +65,7 @@ export default function Contact() {
 				</Reveal>
 			</div>
 
-			<Reveal className="contact-map">
+			<Reveal className="contact-map mx-auto rounded-xl shadow-md">
 				<iframe
 					title={t.contactPage.mapTitle}
 					src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBVizdQeh3udy11xDc5Ao2YStR2gLc-rfc&q=Le%20Carr%C3%A9%20Vaugirard%20by%20Ora%20Events&maptype=roadmap&zoom=14"
