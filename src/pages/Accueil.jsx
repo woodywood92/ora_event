@@ -66,7 +66,7 @@ function Hero({ t, slide, setSlide }) {
 						aria-label={`Slide ${i + 1}`}
 						className={`hero__dot ${i === slide ? 'hero__dot--active' : ''}`}
 					>
-						<span />
+					<span />
 					</button>
 				))}
 			</div>

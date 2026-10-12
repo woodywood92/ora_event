@@ -8,6 +8,9 @@ import Accueil from './pages/Accueil';
 import NosEspaces from './pages/NosEspaces';
 import RSE from './pages/RSE';
 import Contact from './pages/Contact';
+import Colline from './pages/Colline';
+import Satellite from './pages/Satellite';
+
 import './ressources/App.css';
 
 export default function App() {
@@ -21,6 +24,8 @@ export default function App() {
 					<Route path="/nos-espaces" element={<NosEspaces />} />
 					<Route path="/rse" element={<RSE />} />
 					<Route path="/contact" element={<Contact />} />
+					<Route path="/colline" element={<Colline />} />
+					<Route path="/satellite" element={<Satellite />} />
 				</Routes>
 				<Footer />
 			</div>

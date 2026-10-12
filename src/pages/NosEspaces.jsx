@@ -1,58 +1,99 @@
 import React from "react";
-import { Check } from "lucide-react";
-import { PHOTOS } from "../i18n";
-import { useSite } from "../context/SiteContext";
+import {Check} from "lucide-react";
+import {PHOTOS} from "../i18n";
+import {useSite} from "../context/SiteContext";
 import Reveal from "../components/Reveal";
+import { Link } from "react-router-dom";
+import "./NosEspaces.css";
 
 const LIEUX_IMG = [PHOTOS.auditorium, PHOTOS.meeting, PHOTOS.reception];
+const MATTERPORT_EMBED_URL_PLATEAU = "https://shoootin.com/scan/6ac4b3117f82204a39d13809";
 
 export default function NosEspaces() {
-  const { t } = useSite();
+  const {t} = useSite();
+  const routesCibles = ["/Colline", "/Satellite"];
 
   return (
-    <div className="pt-32 pb-24">
-      <section className="px-6 md:px-10 max-w-3xl mx-auto text-center mb-16">
-        <Reveal>
-          <h1 className="font-display text-3xl md:text-5xl font-bold mb-6">{t.nosEspacesPage.title}</h1>
-        </Reveal>
-        <Reveal className="mt-4">
-          <p className="text-gray-500 dark:text-[#8a8a8a] leading-relaxed">{t.nosEspacesPage.intro}</p>
-        </Reveal>
-      </section>
+      <div className="nos-espaces">
+        <section className="nos-espaces-intro">
+          <Reveal>
+            <h1 className="nos-espaces-title">{t.nosEspacesPage.title}</h1>
+          </Reveal>
+          <Reveal className="nos-espaces-intro-reveal">
+            <p className="nos-espaces-intro-text">{t.nosEspacesPage.intro}</p>
+          </Reveal>
+        </section>
 
-      <section className="px-6 md:px-10 max-w-7xl mx-auto">
-        <Reveal>
-          <h2 className="font-display text-xl font-bold mb-8">{t.nosEspacesPage.detailTitle}</h2>
-        </Reveal>
-        <div className="grid md:grid-cols-3 gap-8">
-          {t.lieux.map((l, i) => (
-            <Reveal key={l.nom}>
-              <div className="overflow-hidden mb-5 h-[300px]">
-                <img src={LIEUX_IMG[i]} alt={l.nom} className="w-full h-full object-cover" />
-              </div>
-              <p className="text-xs text-[#5f7d6f] dark:text-[#8FA79B] mb-1">{l.tag}</p>
-              <h3 className="font-display text-xl font-bold mb-3">{l.nom}</h3>
-              <p className="text-sm text-gray-600 dark:text-[#B7B7B7] leading-relaxed">{l.desc}</p>
-            </Reveal>
-          ))}
-        </div>
+        <section className="nos-espaces-content">
+          <Reveal>
+            <h2 className="nos-espaces-detail-title">{t.nosEspacesPage.detailTitle}</h2>
+          </Reveal>
 
-        <Reveal className="mt-20 grid sm:grid-cols-3 gap-8 border-t border-black/10 dark:border-white/10 pt-10">
-          {[t.infos.capacite, t.infos.equip, t.infos.types].map((block) => (
-            <div key={block.h}>
-              <p className="text-xs tracking-[0.15em] text-[#5f7d6f] dark:text-[#8FA79B] mb-3">{block.h}</p>
-              <ul className="space-y-2">
-                {block.bullets.map((b, i) => (
-                  <li key={i} className="text-sm text-gray-600 dark:text-[#B7B7B7] flex items-start gap-2">
-                    <Check size={14} className="mt-0.5 shrink-0 text-[#5f7d6f] dark:text-[#8FA79B]" />
-                    {b}
-                  </li>
-                ))}
-              </ul>
+          <div className="nos-espaces-grid">
+            {t.lieux.map((l, i) => {
+              // Définition de la route ou de l'action pour chaque bloc
+              const destination = routesCibles[i] || "";
+
+              return (
+                  <Reveal key={l.nom}>
+                    {/* Le conteneur entier ou le lien enveloppe l'image ET le texte pour que tout soit cliquable */}
+                    <Link to={destination} className="nos-espaces-card-link"
+                          style={{textDecoration: 'none', color: 'inherit'}}>
+                      <div className="nos-espaces-image">
+                        <img src={LIEUX_IMG[i]} alt={l.nom}/>
+                      </div>
+                      <p className="nos-espaces-tag">{l.tag}</p>
+                      <h3 className="nos-espaces-name">{l.nom}</h3>
+                      <p className="nos-espaces-description">{l.desc}</p>
+                    </Link>
+                  </Reveal>
+              );
+            })}
+          </div>
+
+          <Reveal className="nos-espaces-virtual-tour">
+            <div className="nos-espaces-virtual-header">
+              <h2 className="nos-espaces-virtual-title">{t.nosEspacesPage.virtualTourTitle}</h2>
+              <p className="nos-espaces-virtual-address">255 rue de Vaugirard, 75015 Paris</p>
             </div>
-          ))}
-        </Reveal>
-      </section>
-    </div>
+
+            {MATTERPORT_EMBED_URL_PLATEAU ? (
+                <div className="nos-espaces-virtual-embed">
+                  <iframe
+                      title="Visite virtuelle Le Carré Vaugirard"
+                      src={MATTERPORT_EMBED_URL_PLATEAU}
+                      className="w-full h-full"
+                      frameBorder="0"
+                      allow="xr-spatial-tracking; gyroscope; accelerometer; fullscreen"
+                      allowFullScreen
+                      loading="lazy"
+                  />
+                </div>
+            ) : (
+                <div className="nos-espaces-virtual-placeholder">
+                  <p className="nos-espaces-virtual-placeholder-text">
+                    Visite virtuelle à venir — lien Matterport en attente d'intégration
+                  </p>
+                </div>
+            )}
+          </Reveal>
+
+          <Reveal className="nos-espaces-infos">
+            {[t.infos.capacite, t.infos.equip, t.infos.types].map((block) => (
+                <div key={block.h} className="nos-espaces-info-block">
+                  <p className="nos-espaces-info-title">{block.h}</p>
+                  <ul className="nos-espaces-list">
+                    {block.bullets.map((b, i) => (
+                        <li key={i} className="nos-espaces-list-item">
+                          <Check size={14} className="nos-espaces-check"/>
+                          {b}
+                        </li>
+                    ))}
+                  </ul>
+                </div>
+            ))}
+          </Reveal>
+        </section>
+      </div>
   );
 }

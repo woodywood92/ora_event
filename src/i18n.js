@@ -1,3 +1,6 @@
+import colline_amphi_full from './ressources/images/la-colline-amphi-full.jpg';
+import satellite_auditorium_face from './ressources/images/satellite-auditorium-face.jpg';
+
 export const dict = {
 	fr: {
 		nav: {
@@ -125,6 +128,90 @@ export const dict = {
 			intro:
 				"Deux espaces modulables, un accompagnement technique et logistique complet — pensés pour s'adapter à tous vos formats d'événements professionnels.",
 			detailTitle: 'En détail',
+			virtualTourTitle: 'Visite virtuelle',
+		},
+		collinePage: {
+			title: 'La Colline',
+			intro:
+				"L'espace principal du Carré Vaugirard, pensé pour les conférences, conventions et formats plénières.",
+			hero: {
+				title: 'Un espace modulable pour vos grands rendez-vous',
+				headerTitle: "Jusqu'à 200 pers.",
+				paragraphs: [
+					'Un business center spacieux, lumineux et intimiste, pensé pour favoriser les échanges, la réflexion et la convivialité.',
+					'La Colline réunit un amphithéâtre pouvant accueillir jusqu’à 200 personnes, 400 m² d’espaces de réception, cinq salles de réunion de 6 à 50 personnes, un patio privatif de 120 m², un restaurant ainsi qu’une salle de fitness.',
+					'Grâce à la diversité de ses espaces, La Colline se prête particulièrement aux événements nécessitant plusieurs configurations : ateliers, stands, salles de sous-commission, temps de networking ou moments de convivialité. Une grande modularité qui permet de composer un événement sur mesure et de faire évoluer les espaces au fil de la journée.',
+				],
+			},
+			virtualTourTitle: 'Visite virtuelle',
+			virtualTourSubTitle: 'RDC, Lounge',
+			sections: [
+				{
+					title: 'L’amphitéâtre',
+					text: 'L’amphithéâtre offre un cadre idéal pour vos conférences, prises de parole et présentations. Son architecture soignée, sa régie technique et son confort optimal garantissent une expérience immersive pour vos participants. Tablettes et prises à chaque siège.',
+				},
+				{
+					title: 'L’Atelier Business Center',
+					text: 'Modulable et baigné de lumière, cet espace s’adapte à tous vos formats : présentations, cocktails, workshops, dîners assis... Son design épuré et ses larges ouvertures sur l’extérieur créent une atmosphère à la fois professionnelle et conviviale, propice aux échanges et à la créativité. Accès direct à un patio privatif inclus.',
+				},
+				{
+					title: 'Le Foyer',
+					text: 'Idéal pour vos pauses, stands, cocktails ou moments de networking, le Foyer de La Colline offre une atmosphère chaleureuse et fluide, où les interactions se font naturellement. Un lieu de transition qui devient un véritable temps fort de votre événement.',
+				},
+				{
+					title: 'La Grande salle de réunion',
+					text: 'Cet espace est divisible en deux espaces grâce à une cloison amovible complètement insonorisée. Complétement équipée en audiovisuel, la Grande Salle de Réunion s’adapte à tous formats.',
+				},
+				{
+					title: 'Le Patio',
+					text: 'Le patio extérieur privatif offre un cadre agréable et lumineux, idéal pour vos pauses ou cocktails. Un lieu qui apporte une touche de fraîcheur et de verdure à votre événement.',
+				},
+				{
+					title: 'La salle de fitness',
+					text: 'Pensée pour accueillir vos sessions de team building ou moments de détente, la salle de fitness offre un cadre dynamique et fonctionnel. Un lieu idéal pour intégrer énergie, mouvement et convivialité à votre événement.',
+				},
+			],
+		},
+		satellitePage: {
+			title: 'Le Satellite',
+			intro:
+				'Un espace lumineux et modulable pensé pour accueillir des événements de grande ampleur comme des rencontres plus intimistes.',
+			hero: {
+				title: 'Un espace qui s’adapte à vos ambitions',
+				headerTitle: 'Auditorium modulable de 247 m²',
+				paragraphs: [
+					'Le Satellite réunit un grand auditorium modulable de 247 m², un foyer d’accueil de 100 m², une grande salle de réunion (jusqu’à 60 personnes), ainsi qu’un espace lounge de 205 m².',
+					'Le tout s’ouvre sur un patio privatif de 80 m², idéal pour prolonger les échanges en extérieur. Au 6ᵉ étage, un rooftop extérieur avec vue sur la Tour Eiffel est privatisable.',
+				],
+			},
+			virtualTourTitle: 'Visite virtuelle',
+			virtualTourSubTitle: 'RDC, Lounge',
+			sections: [
+				{
+					title: 'L’auditorium',
+					text: 'Totalement modulable, le Grand Auditorium se transforme selon vos besoins : théâtre, îlots, classe, cocktail… Chaque configuration est possible, pour créer une expérience sur mesure, fluide et impactante. Présence d’une scène et d’une régie technique.',
+				},
+				{
+					title: 'Le lounge',
+					text: 'Avec sa lumière traversante via ses doubles baies vitrées, le Lounge est un espace d’exception spacieux et élégant. Il conviendra parfaitement à vos cocktails. Cette salle allie confort, modernité et esthétisme pour sublimer chacun de vos événements. Accès direct à un patio privatif inclus.',
+				},
+				{
+					title: 'La Salle du Conseil',
+					text: 'La Salle du Conseil offre un cadre confidentiel et structuré, idéal pour vos réunions, comités, prises de décision et formations. Pensée pour favoriser la concentration et la qualité des échanges, elle s’adapte à vos formats tout en garantissant confort, efficacité, et équipement audiovisuel haut de gamme.',
+				},
+				{
+					title: 'Le Foyer',
+					text: 'Le Foyer du Satellite accompagne vos temps de pause, en offrant un cadre spacieux et confortable. Pensé pour s’intégrer avec fluidité à vos formats, il facilite les échanges tout en maintenant le rythme de votre événement.',
+				},
+				{
+					title: 'Le Patio',
+					text: 'Le patio extérieur privatif offre un cadre agréable et lumineux, idéal pour vos pauses ou cocktails. Un lieu qui apporte une touche de fraîcheur et de verdure à votre événement.',
+				},
+				{
+					title: 'Le Rooftop',
+					text: 'Avec sa vue imprenable sur la ville, le rooftop crée une atmosphère unique pour vos cocktails et moments de détente. Un instant privilégié au-dessus des toits de Paris.',
+				},
+			],
 		},
 		rsePage: {
 			badge: 'FairScore A-',
@@ -315,6 +402,73 @@ export const dict = {
 			intro:
 				'Two modular venues, with full technical and logistical support — designed to adapt to every professional event format.',
 			detailTitle: 'In detail',
+			virtualTourTitle: 'Virtual tour',
+		},
+		collinePage: {
+			title: 'La Colline',
+			intro:
+				"Le Carré Vaugirard's main space, designed for conferences, conventions and plenary formats.",
+			hero: {
+				title: 'A modular space for your major events',
+				headerTitle: 'Up to 200 people.',
+				paragraphs: [
+					'La Colline is the main space at Le Carré Vaugirard. It hosts conferences, conventions and plenary formats in an elegant, fully modular setting.',
+					'Its layout adapts to your programme and number of guests.',
+				],
+			},
+			sections: [
+				{
+					title: 'Conferences and conventions',
+					text: 'A layout designed to bring your teams and guests together, with integrated technical equipment for every format, including hybrid and digital.',
+				},
+				{
+					title: 'Cocktails and evening events',
+					text: 'The space transforms to host cocktails, dinners and moments of connection, in an elegant, welcoming atmosphere.',
+				},
+				{
+					title: 'An accessible venue',
+					text: 'ERP-compliant and wheelchair accessible, to welcome all your guests under good conditions.',
+				},
+			],
+		},
+		satellitePage: {
+			title: 'Le Satellite',
+			intro:
+				'A bright, modular space designed to host both large-scale events and more intimate gatherings.',
+			hero: {
+				headerTitle: 'Modular auditorium of 247 m²',
+				paragraphs: [
+					'Le Satellite brings together a large modular auditorium of 247 m², a 100 m² welcome foyer, a large meeting room (up to 60 people) and a 205 m² lounge. Everything opens onto a private 80 m² patio, ideal for continuing conversations outdoors. On the 6th floor, an outdoor rooftop with a view of the Eiffel Tower can be privatised.',
+				],
+			},
+			virtualTourTitle: 'Virtual tour',
+			virtualTourSubTitle: 'Ground floor, Lounge',
+			sections: [
+				{
+					title: 'The auditorium',
+					text: 'Fully modular, the Grand Auditorium transforms to your needs: theatre, islands, classroom, cocktail… Every configuration is possible, to create a tailor-made, fluid and impactful experience. Includes a stage and a technical control room.',
+				},
+				{
+					title: 'The lounge',
+					text: 'With light streaming through its double bay windows, the Lounge is an exceptional space, spacious and elegant. It is perfect for your cocktails. This room combines comfort, modernity and aesthetics to enhance each of your events. Direct access to a private patio included.',
+				},
+				{
+					title: 'The Boardroom',
+					text: 'The Boardroom offers a confidential, structured setting, ideal for your meetings, committees, decision-making and training. Designed to foster concentration and quality of exchange, it adapts to your formats while guaranteeing comfort, efficiency and high-end audiovisual equipment.',
+				},
+				{
+					title: 'The Foyer',
+					text: 'The Satellite’s Foyer supports your break times, offering a spacious and comfortable setting. Designed to blend seamlessly into your formats, it encourages exchange while keeping your event on pace.',
+				},
+				{
+					title: 'The Patio',
+					text: 'The private outdoor patio offers a pleasant, bright setting, ideal for your breaks or cocktails. A place that brings a touch of freshness and greenery to your event.',
+				},
+				{
+					title: 'The Rooftop',
+					text: 'With its breathtaking view over the city, the rooftop creates a unique atmosphere for your cocktails and moments of relaxation. A privileged moment above the rooftops of Paris.',
+				},
+			],
 		},
 		rseTtile: 'Our CSR commitments',
 		rseIntro:
@@ -429,4 +583,12 @@ export const PHOTOS = {
 		'https://images.unsplash.com/photo-1762765685348-4bced247d12c?auto=format&fit=crop&w=1800&q=80',
 	meeting:
 		'https://images.unsplash.com/photo-1762176264161-09219da49794?auto=format&fit=crop&w=1800&q=80',
+	colline_amphi_full: colline_amphi_full,
+	satellite_auditorium_face: satellite_auditorium_face,
+	colline_amphi_regie: '',
+	colline_amphi_contre_plongee: '',
+	colline_entree_canape: '',
+	colline_entree_brique: '',
+	colline_auditorium_full: '',
+	colline_auditorium_face: '',
 };
