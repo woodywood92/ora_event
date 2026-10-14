@@ -203,5 +203,5 @@
 	border-radius: 16px;
 }
 .satellite-photo {
-	object-fit: cover;
+	/*object-fit: cover;*/
 }

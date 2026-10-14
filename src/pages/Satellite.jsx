@@ -8,7 +8,6 @@ import Gallery from '../components/Gallery';
 
 const MATTERPORT_EMBED_URL_LOUNGE_RDJ =
 	'https://shoootin.com/scan/6ac4b57d7f82204a39d13980';
-const HERO_IMG = PHOTOS.satellite_auditorium_face;
 const SECTION_IMGS = [
 	PHOTOS.reception,
 	PHOTOS.meeting,
@@ -30,7 +29,6 @@ export default function Satellite() {
 				</Reveal>
 			</section>
 
-			{/* Texte à gauche / photo à droite */}
 			<section className="satellite-hero">
 				<Reveal className="satellite-text">
 					<p className="satellite-eyebrow">
@@ -44,16 +42,17 @@ export default function Satellite() {
 					))}
 				</Reveal>
 				<Reveal className="satellite-frame">
-					{/* <img
-						src={HERO_IMG}
-						alt={t.satellitePage.title}
-						className="satellite-photo"
-					/> */}
 					<Gallery
 						photos={[
-							{ src: PHOTOS.auditorium, alt: "L'auditorium" },
-							{ src: PHOTOS.meeting, alt: 'La Salle du Conseil' },
-							{ src: PHOTOS.reception, alt: 'Le lounge' },
+							{ src: PHOTOS.satellite_auditorium_face, alt: "L'auditorium" },
+							{ src: PHOTOS.satellite_auditorium_profil, alt: "Espace modulable de l'auditorium" },
+							{ src: PHOTOS.satellite_lounge_principal, alt: 'Espace Lounge' },
+							{ src: PHOTOS.satellite_foyer_profil, alt: 'Le Foyer accueil' },
+							{ src: PHOTOS.satellite_rooftop_principal, alt: 'Le Rooftop' },
+							{ src: PHOTOS.satellite_rooftop_secondaire, alt: 'Le Rooftop vue Tour Eiffel' },
+							{ src: PHOTOS.satellite_rooftop_ia, alt: 'Le Rooftop Guinguette' },
+							{ src: PHOTOS.satellite_foyer_principal, alt: 'Le Foyer' },
+							{ src: PHOTOS.satellite_foyer_profil, alt: 'Le Foyer accueil' },
 						]}
 					/>
 				</Reveal>
@@ -105,10 +104,17 @@ export default function Satellite() {
 							<p className="satellite-paragraph">{s.text}</p>
 						</Reveal>
 						<Reveal className="satellite-frame">
-							<img
+							{/*<img
 								src={SECTION_IMGS[i % SECTION_IMGS.length]}
 								alt={s.title}
 								className="satellite-photo"
+							/>*/}
+							<Gallery
+								photos={
+									s.photos ?? [
+										{ src: SECTION_IMGS[i % SECTION_IMGS.length], alt: s.title },
+									]
+								}
 							/>
 						</Reveal>
 					</div>

@@ -1,5 +1,16 @@
 import colline_amphi_full from './ressources/images/la-colline-amphi-full.jpg';
-import satellite_auditorium_face from './ressources/images/satellite-auditorium-face.jpg';
+import auditorium_face from './ressources/images/Auditorium/auditorium_face.jpg';
+import auditorium_profil from './ressources/images/Auditorium/auditorium_profil.jpg';
+import foyer_principal from './ressources/images/Foyer/foyer_principal.jpg';
+import foyer_profil from './ressources/images/Foyer/foyer_profil.jpg';
+import lounge_principal from './ressources/images/Lounge/lounge_principal.jpg';
+import rooftop_ia from './ressources/images/Rooftop/rooftop_ia.png';
+import rooftop_principal from './ressources/images/Rooftop/rooftop_principal.jpg';
+import rooftop_secondaire from './ressources/images/Rooftop/rooftop_secondaire.jpg';
+
+import auditorium_plafond from './ressources/images/Auditorium/auditorium_plafond.jpg';
+import auditorium_face_plafond from './ressources/images/Auditorium/auditorium_face_plafond.jpg';
+
 
 export const dict = {
 	fr: {
@@ -181,7 +192,8 @@ export const dict = {
 				headerTitle: 'Auditorium modulable de 247 m²',
 				paragraphs: [
 					'Le Satellite réunit un grand auditorium modulable de 247 m², un foyer d’accueil de 100 m², une grande salle de réunion (jusqu’à 60 personnes), ainsi qu’un espace lounge de 205 m².',
-					'Le tout s’ouvre sur un patio privatif de 80 m², idéal pour prolonger les échanges en extérieur. Au 6ᵉ étage, un rooftop extérieur avec vue sur la Tour Eiffel est privatisable.',
+					'Le tout s’ouvre sur un patio privatif de 80 m², idéal pour prolonger les échanges en extérieur.',
+					'Au 6ᵉ étage, un rooftop extérieur avec vue sur la Tour Eiffel est privatisable.',
 				],
 			},
 			virtualTourTitle: 'Visite virtuelle',
@@ -190,6 +202,10 @@ export const dict = {
 				{
 					title: 'L’auditorium',
 					text: 'Totalement modulable, le Grand Auditorium se transforme selon vos besoins : théâtre, îlots, classe, cocktail… Chaque configuration est possible, pour créer une expérience sur mesure, fluide et impactante. Présence d’une scène et d’une régie technique.',
+					photos: [
+						{ src: auditorium_plafond, alt: "le Grand Auditorium" },
+						{ src: auditorium_face_plafond, alt: "Auditorium en îlots" },
+					],
 				},
 				{
 					title: 'Le lounge',
@@ -584,11 +600,12 @@ export const PHOTOS = {
 	meeting:
 		'https://images.unsplash.com/photo-1762176264161-09219da49794?auto=format&fit=crop&w=1800&q=80',
 	colline_amphi_full: colline_amphi_full,
-	satellite_auditorium_face: satellite_auditorium_face,
-	colline_amphi_regie: '',
-	colline_amphi_contre_plongee: '',
-	colline_entree_canape: '',
-	colline_entree_brique: '',
-	colline_auditorium_full: '',
-	colline_auditorium_face: '',
+	satellite_auditorium_face: auditorium_face,
+	satellite_auditorium_profil: auditorium_profil,
+	satellite_foyer_principal: foyer_principal,
+	satellite_foyer_profil: foyer_profil,
+	satellite_lounge_principal: lounge_principal,
+	satellite_rooftop_principal: rooftop_principal,
+	satellite_rooftop_secondaire: rooftop_secondaire,
+	satellite_rooftop_ia: rooftop_ia,
 };
