@@ -1,4 +1,7 @@
-import colline_amphi_full from './ressources/images/la-colline-amphi-full.jpg';
+import colline_amphi_full from './ressources/images/Amphi/amphi_full.jpg';
+import colline_amphi_bas from './ressources/images/Amphi/amphi_contre_plongee.jpg';
+import colline_amphi_regi from './ressources/images/Amphi/amphi_regie.jpg';
+
 import auditorium_face from './ressources/images/Auditorium/auditorium_face.jpg';
 import auditorium_profil from './ressources/images/Auditorium/auditorium_profil.jpg';
 import foyer_principal from './ressources/images/Foyer/foyer_principal.jpg';
@@ -7,9 +10,32 @@ import lounge_principal from './ressources/images/Lounge/lounge_principal.jpg';
 import rooftop_ia from './ressources/images/Rooftop/rooftop_ia.png';
 import rooftop_principal from './ressources/images/Rooftop/rooftop_principal.jpg';
 import rooftop_secondaire from './ressources/images/Rooftop/rooftop_secondaire.jpg';
-
 import auditorium_plafond from './ressources/images/Auditorium/auditorium_plafond.jpg';
 import auditorium_face_plafond from './ressources/images/Auditorium/auditorium_face_plafond.jpg';
+import lounge_secondaire from './ressources/images/Lounge/lounge_secondaire.jpg';
+import lounge_chaises from './ressources/images/Lounge/lounge_chaises.jpg';
+import lounge_profil from './ressources/images/Lounge/lounge_profil.jpg';
+import lounge_full from './ressources/images/Lounge/lounge_full.jpg';
+import lounge_tabouret from './ressources/images/Lounge/lounge_tabouret.jpg';
+import salle_conseil from './ressources/images/Salle du Conseil/Salle du conseil.jpg';
+import salle_conseil_face from './ressources/images/Salle du Conseil/Salle du conseil_face.jpg';
+import salle_conseil_full from './ressources/images/Salle du Conseil/Salle du conseil_full.jpg';
+import foyer_full from './ressources/images/Foyer/foyer_full.jpg';
+import foyer_chaises from './ressources/images/Foyer/foyer_chaises.jpg';
+import patio_satellite_1 from './ressources/images/Patio/patio_satellite_1.jpg';
+import patio_satellite_2 from './ressources/images/Patio/patio_satellite_2.jpg';
+
+import rooftop_effeil from './ressources/images/Rooftop/rooftop_effeil.jpg';
+import rooftop_montparnasse from './ressources/images/Rooftop/rooftop_montparnasse.jpg';
+import rooftop_pyramide from './ressources/images/Rooftop/rooftop_pyramide.jpg';
+
+
+import jardin_exterieur from './ressources/images/Jardin/jardin_exterieur.jpg';
+import facade_exterieur from './ressources/images/Facade/facade_exterieur.jpg';
+import lustre from './ressources/images/Facade/lustre.jpg';
+import facade from './ressources/images/Facade/facade.jpg';
+import restaurant_principal from './ressources/images/Restaurant/restaurant_principal.jpg';
+import restaurant_profil from './ressources/images/Restaurant/restaurant_profil.jpg';
 
 
 export const dict = {
@@ -160,6 +186,11 @@ export const dict = {
 				{
 					title: 'L’amphitéâtre',
 					text: 'L’amphithéâtre offre un cadre idéal pour vos conférences, prises de parole et présentations. Son architecture soignée, sa régie technique et son confort optimal garantissent une expérience immersive pour vos participants. Tablettes et prises à chaque siège.',
+					photos: [
+						{ src: colline_amphi_full, alt: "" },
+						{ src: colline_amphi_bas, alt: "" },
+						{ src: colline_amphi_regi, alt: "" },
+					],
 				},
 				{
 					title: 'L’Atelier Business Center',
@@ -210,22 +241,51 @@ export const dict = {
 				{
 					title: 'Le lounge',
 					text: 'Avec sa lumière traversante via ses doubles baies vitrées, le Lounge est un espace d’exception spacieux et élégant. Il conviendra parfaitement à vos cocktails. Cette salle allie confort, modernité et esthétisme pour sublimer chacun de vos événements. Accès direct à un patio privatif inclus.',
+					photos: [
+						{ src: lounge_secondaire, alt: "" },
+						{ src: lounge_chaises, alt: "" },
+						{ src: lounge_full, alt: "" },
+						{ src: lounge_profil, alt: "" },
+						{ src: lounge_tabouret, alt: "" },
+					],
 				},
 				{
 					title: 'La Salle du Conseil',
 					text: 'La Salle du Conseil offre un cadre confidentiel et structuré, idéal pour vos réunions, comités, prises de décision et formations. Pensée pour favoriser la concentration et la qualité des échanges, elle s’adapte à vos formats tout en garantissant confort, efficacité, et équipement audiovisuel haut de gamme.',
+					photos: [
+						{ src: salle_conseil, alt: "" },
+						{ src: salle_conseil_full, alt: "" },
+						{ src: salle_conseil_face, alt: "" },
+					],
 				},
 				{
 					title: 'Le Foyer',
 					text: 'Le Foyer du Satellite accompagne vos temps de pause, en offrant un cadre spacieux et confortable. Pensé pour s’intégrer avec fluidité à vos formats, il facilite les échanges tout en maintenant le rythme de votre événement.',
+					photos: [
+						{ src: foyer_profil, alt: "" },
+						{ src: foyer_principal, alt: "" },
+						{ src: foyer_chaises, alt: "" },
+						{ src: foyer_full, alt: "" },
+					],
 				},
 				{
 					title: 'Le Patio',
 					text: 'Le patio extérieur privatif offre un cadre agréable et lumineux, idéal pour vos pauses ou cocktails. Un lieu qui apporte une touche de fraîcheur et de verdure à votre événement.',
+					photos: [
+						{ src: patio_satellite_1, alt: "" },
+						{ src: patio_satellite_2, alt: "" },
+					],
 				},
 				{
 					title: 'Le Rooftop',
 					text: 'Avec sa vue imprenable sur la ville, le rooftop crée une atmosphère unique pour vos cocktails et moments de détente. Un instant privilégié au-dessus des toits de Paris.',
+					photos: [
+						{ src: rooftop_principal, alt: "" },
+						{ src: rooftop_effeil, alt: "" },
+						{ src: rooftop_ia, alt: "" },
+						{ src: rooftop_pyramide, alt: "" },
+						{ src: rooftop_montparnasse, alt: "" },
+					],
 				},
 			],
 		},
@@ -562,10 +622,8 @@ export const dict = {
 			title: 'Get in touch',
 			intro:
 				'A question, an event project? Our team responds quickly to arrange a venue visit or discuss your needs.',
-
 			reasonsEyebrow: 'Our commitments',
 			reasonsTitle: 'Why choose Ora Events?',
-
 			reasons: [
 				{
 					title: 'Prestigious, modular spaces',
@@ -600,6 +658,15 @@ export const PHOTOS = {
 	meeting:
 		'https://images.unsplash.com/photo-1762176264161-09219da49794?auto=format&fit=crop&w=1800&q=80',
 	colline_amphi_full: colline_amphi_full,
+	colline_amphi_bas: colline_amphi_bas,
+
+	colline_jardin_ext: jardin_exterieur,
+	colline_facade_ext: facade_exterieur,
+	colline_facade: facade,
+	colline_lustre: lustre,
+	colline_restaurant_principal: restaurant_principal,
+	colline_restaurant_profil: restaurant_profil,
+
 	satellite_auditorium_face: auditorium_face,
 	satellite_auditorium_profil: auditorium_profil,
 	satellite_foyer_principal: foyer_principal,

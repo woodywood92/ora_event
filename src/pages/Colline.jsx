@@ -4,6 +4,7 @@ import {PHOTOS} from "../i18n";
 import {useSite} from "../context/SiteContext";
 import Reveal from "../components/Reveal";
 import "../ressources/Colline.css";
+import Gallery from "../components/Gallery.jsx";
 
 const MATTERPORT_EMBED_URL_LOUNGE = "https://shoootin.com/scan/6ac4b4187f82204a39d13899";
 
@@ -25,7 +26,6 @@ export default function Colline() {
                 </Reveal>
             </section>
 
-            {/* Texte à gauche / photo à droite */}
             <section className="colline-hero">
                 <Reveal className="colline-text">
                     <p className="colline-eyebrow">{t.collinePage.hero.headerTitle}</p>
@@ -36,8 +36,19 @@ export default function Colline() {
                         </p>
                     ))}
                 </Reveal>
-                <Reveal className="colline-frame">
-                    <img src={HERO_IMG} alt={t.collinePage.title} className="colline-photo"/>
+                <Reveal>
+                    <Gallery
+                        photos={[
+                            { src: PHOTOS.colline_amphi_full, alt: "" },
+                            { src: PHOTOS.colline_amphi_bas, alt: "" },
+                            { src: PHOTOS.colline_jardin_ext, alt: "" },
+                            { src: PHOTOS.colline_facade_ext, alt: '' },
+                            { src: PHOTOS.colline_facade, alt: '' },
+                            { src: PHOTOS.colline_lustre, alt: '' },
+                            { src: PHOTOS.colline_restaurant_principal, alt: '' },
+                            { src: PHOTOS.colline_restaurant_profil, alt: '' },
+                        ]}
+                    />
                 </Reveal>
             </section>
 
@@ -81,11 +92,13 @@ export default function Colline() {
                             <h3 className="colline-heading">{s.title}</h3>
                             <p className="colline-paragraph">{s.text}</p>
                         </Reveal>
-                        <Reveal className="colline-frame">
-                            <img
-                                src={SECTION_IMGS[i % SECTION_IMGS.length]}
-                                alt={s.title}
-                                className="colline-photo"
+                        <Reveal>
+                            <Gallery
+                                photos={
+                                    s.photos ?? [
+                                        { src: SECTION_IMGS[i % SECTION_IMGS.length], alt: s.title },
+                                    ]
+                                }
                             />
                         </Reveal>
                     </div>

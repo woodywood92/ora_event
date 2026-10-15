@@ -41,13 +41,12 @@ export default function Satellite() {
 						</p>
 					))}
 				</Reveal>
-				<Reveal className="satellite-frame">
+				<Reveal>
 					<Gallery
 						photos={[
 							{ src: PHOTOS.satellite_auditorium_face, alt: "L'auditorium" },
 							{ src: PHOTOS.satellite_auditorium_profil, alt: "Espace modulable de l'auditorium" },
 							{ src: PHOTOS.satellite_lounge_principal, alt: 'Espace Lounge' },
-							{ src: PHOTOS.satellite_foyer_profil, alt: 'Le Foyer accueil' },
 							{ src: PHOTOS.satellite_rooftop_principal, alt: 'Le Rooftop' },
 							{ src: PHOTOS.satellite_rooftop_secondaire, alt: 'Le Rooftop vue Tour Eiffel' },
 							{ src: PHOTOS.satellite_rooftop_ia, alt: 'Le Rooftop Guinguette' },
@@ -103,12 +102,7 @@ export default function Satellite() {
 							<h3 className="satellite-heading">{s.title}</h3>
 							<p className="satellite-paragraph">{s.text}</p>
 						</Reveal>
-						<Reveal className="satellite-frame">
-							{/*<img
-								src={SECTION_IMGS[i % SECTION_IMGS.length]}
-								alt={s.title}
-								className="satellite-photo"
-							/>*/}
+						<Reveal>
 							<Gallery
 								photos={
 									s.photos ?? [
