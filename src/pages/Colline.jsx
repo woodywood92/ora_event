@@ -5,6 +5,17 @@ import {useSite} from "../context/SiteContext";
 import Reveal from "../components/Reveal";
 import "../ressources/Colline.css";
 import Gallery from "../components/Gallery.jsx";
+import foyer_profil from "../ressources/images/Foyer/foyer_profil.jpg";
+import foyer_principal from "../ressources/images/Foyer/foyer_principal.jpg";
+import foyer_chaises from "../ressources/images/Foyer/foyer_chaises.jpg";
+import foyer_full from "../ressources/images/Foyer/foyer_full.jpg";
+import patio_satellite_1 from "../ressources/images/Patio/patio_satellite_1.jpg";
+import patio_satellite_2 from "../ressources/images/Patio/patio_satellite_2.jpg";
+import rooftop_principal from "../ressources/images/Rooftop/rooftop_principal.jpg";
+import rooftop_effeil from "../ressources/images/Rooftop/rooftop_effeil.jpg";
+import rooftop_ia from "../ressources/images/Rooftop/rooftop_ia.png";
+import rooftop_pyramide from "../ressources/images/Rooftop/rooftop_pyramide.jpg";
+import rooftop_montparnasse from "../ressources/images/Rooftop/rooftop_montparnasse.jpg";
 
 const MATTERPORT_EMBED_URL_LOUNGE = "https://shoootin.com/scan/6ac4b4187f82204a39d13899";
 

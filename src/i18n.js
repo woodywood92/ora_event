@@ -29,7 +29,6 @@ import rooftop_effeil from './ressources/images/Rooftop/rooftop_effeil.jpg';
 import rooftop_montparnasse from './ressources/images/Rooftop/rooftop_montparnasse.jpg';
 import rooftop_pyramide from './ressources/images/Rooftop/rooftop_pyramide.jpg';
 
-
 import jardin_exterieur from './ressources/images/Jardin/jardin_exterieur.jpg';
 import facade_exterieur from './ressources/images/Facade/facade_exterieur.jpg';
 import lustre from './ressources/images/Facade/lustre.jpg';
@@ -37,6 +36,29 @@ import facade from './ressources/images/Facade/facade.jpg';
 import restaurant_principal from './ressources/images/Restaurant/restaurant_principal.jpg';
 import restaurant_profil from './ressources/images/Restaurant/restaurant_profil.jpg';
 
+import business_center_principal from './ressources/images/Business Center/business_center_principal.jpg';
+import business_center_chaise from './ressources/images/Business Center/business_center_chaise.jpg';
+import business_center_canape from './ressources/images/Business Center/business_center_canape.jpg';
+
+import colline_foyer_principal from './ressources/images/Colline Foyer/colline_foyer_principal.jpg';
+import colline_foyer_fixe from './ressources/images/Colline Foyer/colline_foyer_fixe.jpg';
+import colline_foyer_chaises from './ressources/images/Colline Foyer/colline_foyer_chaises.jpg';
+
+import salle_de_reunion_principal from './ressources/images/Salle de Réunion Annexe/salle_de_reunion_principal.jpg';
+import salle_de_reunion_1 from './ressources/images/Salle de Réunion Annexe/salle_de_reunion_1.jpg';
+import salle_de_reunion_2 from './ressources/images/Salle de Réunion Annexe/salle_de_reunion_2.jpg';
+import salle_de_reunion_3 from './ressources/images/Salle de Réunion Annexe/salle_de_reunion_3.jpg';
+import salle_de_reunion_4 from './ressources/images/Salle de Réunion Annexe/salle_de_reunion_4.jpg';
+import salle_de_reunion_5 from './ressources/images/Salle de Réunion Annexe/salle_de_reunion_5.jpg';
+
+import colline_patio_principal from './ressources/images/Colline Patio/colline_patio_principal.jpg';
+import colline_patio_ext_1 from './ressources/images/Colline Patio/colline_patio_ext_1.jpg';
+import colline_patio_ext_2 from './ressources/images/Colline Patio/colline_patio_ext_2.jpg';
+import colline_patio_ext_3 from './ressources/images/Colline Patio/colline_patio_ext_3.jpg';
+
+import fitness_principal from './ressources/images/Fitness/Fitness.jpg';
+import fitness_1 from './ressources/images/Fitness/Fitness_1.jpg';
+import fitness_2 from './ressources/images/Fitness/Fitness_2.jpg';
 
 export const dict = {
 	fr: {
@@ -48,6 +70,7 @@ export const dict = {
 			contact: 'Contact',
 			visite: 'Demander une visite',
 			enSavoirPlus: 'En savoir plus',
+			galleryAgrandir: 'Cliquez sur la photo pour agrandir'
 		},
 		slides: [
 			{
@@ -195,22 +218,51 @@ export const dict = {
 				{
 					title: 'L’Atelier Business Center',
 					text: 'Modulable et baigné de lumière, cet espace s’adapte à tous vos formats : présentations, cocktails, workshops, dîners assis... Son design épuré et ses larges ouvertures sur l’extérieur créent une atmosphère à la fois professionnelle et conviviale, propice aux échanges et à la créativité. Accès direct à un patio privatif inclus.',
+					photos: [
+						{ src: business_center_principal, alt: "" },
+						{ src: business_center_canape, alt: "" },
+						{ src: business_center_chaise, alt: "" },
+					],
 				},
 				{
 					title: 'Le Foyer',
 					text: 'Idéal pour vos pauses, stands, cocktails ou moments de networking, le Foyer de La Colline offre une atmosphère chaleureuse et fluide, où les interactions se font naturellement. Un lieu de transition qui devient un véritable temps fort de votre événement.',
+					photos: [
+						{ src: colline_foyer_principal, alt: "" },
+						{ src: colline_foyer_fixe, alt: "" },
+						{ src: colline_foyer_chaises, alt: "" },
+					],
 				},
 				{
 					title: 'La Grande salle de réunion',
 					text: 'Cet espace est divisible en deux espaces grâce à une cloison amovible complètement insonorisée. Complétement équipée en audiovisuel, la Grande Salle de Réunion s’adapte à tous formats.',
+					photos: [
+						{ src: salle_de_reunion_principal, alt: "" },
+						{ src: salle_de_reunion_1, alt: "" },
+						{ src: salle_de_reunion_2, alt: "" },
+						{ src: salle_de_reunion_3, alt: "" },
+						{ src: salle_de_reunion_4, alt: "" },
+						{ src: salle_de_reunion_5, alt: "" },
+					],
 				},
 				{
 					title: 'Le Patio',
 					text: 'Le patio extérieur privatif offre un cadre agréable et lumineux, idéal pour vos pauses ou cocktails. Un lieu qui apporte une touche de fraîcheur et de verdure à votre événement.',
+					photos: [
+						{ src: colline_patio_principal, alt: "" },
+						{ src: colline_patio_ext_1, alt: "" },
+						{ src: colline_patio_ext_2, alt: "" },
+						{ src: colline_patio_ext_3, alt: "" },
+					],
 				},
 				{
 					title: 'La salle de fitness',
 					text: 'Pensée pour accueillir vos sessions de team building ou moments de détente, la salle de fitness offre un cadre dynamique et fonctionnel. Un lieu idéal pour intégrer énergie, mouvement et convivialité à votre événement.',
+					photos: [
+						{ src: fitness_principal, alt: "" },
+						{ src: fitness_1, alt: "" },
+						{ src: fitness_2, alt: "" },
+					],
 				},
 			],
 		},
@@ -383,6 +435,7 @@ export const dict = {
 			contact: 'Contact',
 			visite: 'Request a visit',
 			enSavoirPlus: 'Learn more',
+			galleryAgrandir: 'Click on the image to enlarge.'
 		},
 		slides: [
 			{ n: '01', title: 'A premium event venue in the heart of Paris' },
@@ -481,40 +534,92 @@ export const dict = {
 			virtualTourTitle: 'Virtual tour',
 		},
 		collinePage: {
-			title: 'La Colline',
+			title: 'The Colline',
 			intro:
 				"Le Carré Vaugirard's main space, designed for conferences, conventions and plenary formats.",
 			hero: {
 				title: 'A modular space for your major events',
 				headerTitle: 'Up to 200 people.',
 				paragraphs: [
-					'La Colline is the main space at Le Carré Vaugirard. It hosts conferences, conventions and plenary formats in an elegant, fully modular setting.',
-					'Its layout adapts to your programme and number of guests.',
+					'A spacious, bright and welcoming business centre designed to encourage conversation, reflection and social interaction.',
+					'La Colline features an auditorium accommodating up to 200 people, 400 m² of reception space, five meeting rooms for 6 to 50 people, a private 120 m² patio, a restaurant and a fitness room.',
+					'Thanks to its variety of spaces, La Colline is particularly well suited to events requiring different layouts, including workshops, exhibition stands, breakout rooms, networking sessions and social gatherings. Its great flexibility allows you to create a tailor-made event and adapt the spaces throughout the day.',
 				],
 			},
+			virtualTourTitle: 'Virtual Tour',
+			virtualTourSubTitle: 'RDC, Lounge',
 			sections: [
 				{
-					title: 'Conferences and conventions',
-					text: 'A layout designed to bring your teams and guests together, with integrated technical equipment for every format, including hybrid and digital.',
+					title: 'The Auditorium',
+					text: 'The auditorium provides an ideal setting for conferences, presentations and keynote speeches. Its refined architecture, technical control booth and optimal comfort ensure an immersive experience for your attendees. Each seat is equipped with a writing tablet and power outlets.',
+					photos: [
+						{ src: colline_amphi_full, alt: "" },
+						{ src: colline_amphi_bas, alt: "" },
+						{ src: colline_amphi_regi, alt: "" },
+					],
 				},
 				{
-					title: 'Cocktails and evening events',
-					text: 'The space transforms to host cocktails, dinners and moments of connection, in an elegant, welcoming atmosphere.',
+					title: 'The Atelier Business Center',
+					text: 'Flexible and filled with natural light, this space adapts to all types of events, from presentations and cocktail receptions to workshops and seated dinners. Its minimalist design and large windows overlooking the outdoors create a professional yet welcoming atmosphere, encouraging conversation and creativity. Direct access to a private patio is included.',
+					photos: [
+						{ src: business_center_principal, alt: "" },
+						{ src: business_center_canape, alt: "" },
+						{ src: business_center_chaise, alt: "" },
+					],
 				},
 				{
-					title: 'An accessible venue',
-					text: 'ERP-compliant and wheelchair accessible, to welcome all your guests under good conditions.',
+					title: 'The Foyer',
+					text: 'Ideal for breaks, exhibition stands, cocktail receptions and networking sessions, La Colline’s foyer offers a warm and welcoming atmosphere where interactions flow naturally. A transitional space that becomes a highlight of your event.',
+					photos: [
+						{ src: colline_foyer_principal, alt: "" },
+						{ src: colline_foyer_fixe, alt: "" },
+						{ src: colline_foyer_chaises, alt: "" },
+					],
+				},
+				{
+					title: 'The Large Meeting Room',
+					text: 'This space can be divided into two separate rooms using a fully soundproof movable partition. Fully equipped with audiovisual technology, the Large Meeting Room adapts to a wide range of event formats.',
+					photos: [
+						{ src: salle_de_reunion_principal, alt: "" },
+						{ src: salle_de_reunion_1, alt: "" },
+						{ src: salle_de_reunion_2, alt: "" },
+						{ src: salle_de_reunion_3, alt: "" },
+						{ src: salle_de_reunion_4, alt: "" },
+						{ src: salle_de_reunion_5, alt: "" },
+					],
+				},
+				{
+					title: 'The Patio',
+					text: 'The private outdoor patio offers a pleasant, light-filled setting, ideal for breaks or cocktail receptions. It brings a refreshing touch of greenery to your event.',
+					photos: [
+						{ src: colline_patio_principal, alt: "" },
+						{ src: colline_patio_ext_1, alt: "" },
+						{ src: colline_patio_ext_2, alt: "" },
+						{ src: colline_patio_ext_3, alt: "" },
+					],
+				},
+				{
+					title: 'The Fitness Room',
+					text: 'Designed to accommodate team-building sessions and moments of relaxation, the fitness room offers a dynamic and functional setting. It is ideal for bringing energy, movement and a sense of togetherness to your event.',
+					photos: [
+						{ src: fitness_principal, alt: "" },
+						{ src: fitness_1, alt: "" },
+						{ src: fitness_2, alt: "" },
+					],
 				},
 			],
 		},
 		satellitePage: {
-			title: 'Le Satellite',
+			title: 'The Satellite',
 			intro:
 				'A bright, modular space designed to host both large-scale events and more intimate gatherings.',
 			hero: {
+				title: 'A space that adapts to your ambitions',
 				headerTitle: 'Modular auditorium of 247 m²',
 				paragraphs: [
-					'Le Satellite brings together a large modular auditorium of 247 m², a 100 m² welcome foyer, a large meeting room (up to 60 people) and a 205 m² lounge. Everything opens onto a private 80 m² patio, ideal for continuing conversations outdoors. On the 6th floor, an outdoor rooftop with a view of the Eiffel Tower can be privatised.',
+					'Le Satellite brings together a large modular auditorium of 247 m², a 100 m² welcome foyer, a large meeting room (up to 60 people) and a 205 m² lounge.',
+					'Everything opens onto a private 80 m² patio, ideal for continuing conversations outdoors.',
+					'On the 6th floor, an outdoor rooftop with a view of the Eiffel Tower can be privatised.',
 				],
 			},
 			virtualTourTitle: 'Virtual tour',
@@ -523,26 +628,59 @@ export const dict = {
 				{
 					title: 'The auditorium',
 					text: 'Fully modular, the Grand Auditorium transforms to your needs: theatre, islands, classroom, cocktail… Every configuration is possible, to create a tailor-made, fluid and impactful experience. Includes a stage and a technical control room.',
+					photos: [
+						{ src: auditorium_plafond, alt: "le Grand Auditorium" },
+						{ src: auditorium_face_plafond, alt: "Auditorium en îlots" },
+					],
 				},
 				{
 					title: 'The lounge',
 					text: 'With light streaming through its double bay windows, the Lounge is an exceptional space, spacious and elegant. It is perfect for your cocktails. This room combines comfort, modernity and aesthetics to enhance each of your events. Direct access to a private patio included.',
+					photos: [
+						{ src: lounge_secondaire, alt: "" },
+						{ src: lounge_chaises, alt: "" },
+						{ src: lounge_full, alt: "" },
+						{ src: lounge_profil, alt: "" },
+						{ src: lounge_tabouret, alt: "" },
+					],
 				},
 				{
 					title: 'The Boardroom',
 					text: 'The Boardroom offers a confidential, structured setting, ideal for your meetings, committees, decision-making and training. Designed to foster concentration and quality of exchange, it adapts to your formats while guaranteeing comfort, efficiency and high-end audiovisual equipment.',
+					photos: [
+						{ src: salle_conseil, alt: "" },
+						{ src: salle_conseil_full, alt: "" },
+						{ src: salle_conseil_face, alt: "" },
+					],
 				},
 				{
 					title: 'The Foyer',
 					text: 'The Satellite’s Foyer supports your break times, offering a spacious and comfortable setting. Designed to blend seamlessly into your formats, it encourages exchange while keeping your event on pace.',
+					photos: [
+						{ src: foyer_profil, alt: "" },
+						{ src: foyer_principal, alt: "" },
+						{ src: foyer_chaises, alt: "" },
+						{ src: foyer_full, alt: "" },
+					],
 				},
 				{
 					title: 'The Patio',
 					text: 'The private outdoor patio offers a pleasant, bright setting, ideal for your breaks or cocktails. A place that brings a touch of freshness and greenery to your event.',
+					photos: [
+						{ src: patio_satellite_1, alt: "" },
+						{ src: patio_satellite_2, alt: "" },
+					],
 				},
 				{
 					title: 'The Rooftop',
 					text: 'With its breathtaking view over the city, the rooftop creates a unique atmosphere for your cocktails and moments of relaxation. A privileged moment above the rooftops of Paris.',
+					photos: [
+						{ src: rooftop_principal, alt: "" },
+						{ src: rooftop_effeil, alt: "" },
+						{ src: rooftop_ia, alt: "" },
+						{ src: rooftop_pyramide, alt: "" },
+						{ src: rooftop_montparnasse, alt: "" },
+					],
 				},
 			],
 		},

@@ -4,7 +4,7 @@ import {PHOTOS} from "../i18n";
 import {useSite} from "../context/SiteContext";
 import Reveal from "../components/Reveal";
 import { Link } from "react-router-dom";
-import "./NosEspaces.css";
+import "../ressources/NosEspaces.css";
 
 const LIEUX_IMG = [PHOTOS.auditorium, PHOTOS.meeting, PHOTOS.reception];
 const MATTERPORT_EMBED_URL_PLATEAU = "https://shoootin.com/scan/6ac4b3117f82204a39d13809";

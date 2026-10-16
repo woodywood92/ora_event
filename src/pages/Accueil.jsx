@@ -4,7 +4,7 @@ import { ArrowRight, MapPin, Users, Building2 } from 'lucide-react';
 import { PHOTOS } from '../i18n';
 import { useSite } from '../context/SiteContext';
 import Reveal from '../components/Reveal';
-import './Accueil.css';
+import '../ressources/Accueil.css';
 
 const SLIDES_IMG = [PHOTOS.auditorium, PHOTOS.reception, PHOTOS.meeting];
 const LIEUX_IMG = [PHOTOS.auditorium, PHOTOS.meeting, PHOTOS.reception];

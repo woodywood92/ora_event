@@ -2,9 +2,29 @@ import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import '../ressources/Gallery.css';
+import {useSite} from "../context/SiteContext.jsx";
+import business_center_principal from "../ressources/images/Business Center/business_center_principal.jpg";
+import business_center_canape from "../ressources/images/Business Center/business_center_canape.jpg";
+import business_center_chaise from "../ressources/images/Business Center/business_center_chaise.jpg";
+import colline_foyer_principal from "../ressources/images/Colline Foyer/colline_foyer_principal.jpg";
+import colline_foyer_fixe from "../ressources/images/Colline Foyer/colline_foyer_fixe.jpg";
+import colline_foyer_chaises from "../ressources/images/Colline Foyer/colline_foyer_chaises.jpg";
+import salle_de_reunion_principal from "../ressources/images/Salle de Réunion Annexe/salle_de_reunion_principal.jpg";
+import salle_de_reunion_1 from "../ressources/images/Salle de Réunion Annexe/salle_de_reunion_1.jpg";
+import salle_de_reunion_2 from "../ressources/images/Salle de Réunion Annexe/salle_de_reunion_2.jpg";
+import salle_de_reunion_3 from "../ressources/images/Salle de Réunion Annexe/salle_de_reunion_3.jpg";
+import salle_de_reunion_4 from "../ressources/images/Salle de Réunion Annexe/salle_de_reunion_4.jpg";
+import salle_de_reunion_5 from "../ressources/images/Salle de Réunion Annexe/salle_de_reunion_5.jpg";
+import colline_patio_principal from "../ressources/images/Colline Patio/colline_patio_principal.jpg";
+import colline_patio_ext_1 from "../ressources/images/Colline Patio/colline_patio_ext_1.jpg";
+import colline_patio_ext_2 from "../ressources/images/Colline Patio/colline_patio_ext_2.jpg";
+import colline_patio_ext_3 from "../ressources/images/Colline Patio/colline_patio_ext_3.jpg";
+import fitness_principal from "../ressources/images/Fitness/Fitness.jpg";
+import fitness_1 from "../ressources/images/Fitness/Fitness_1.jpg";
+import fitness_2 from "../ressources/images/Fitness/Fitness_2.jpg";
 
-// photos : [{ src, alt }]
 export default function Gallery({ photos = [] }) {
+	const {t} = useSite();
 	const [index, setIndex] = useState(0);
 	const [open, setOpen] = useState(false);
 	const total = photos.length;
@@ -120,7 +140,7 @@ export default function Gallery({ photos = [] }) {
 					/>
 				))}
 			</div>
-			<p className="gallery-hint">Cliquez sur la photo pour agrandir</p>
+			<p className="gallery-hint">{t.nav.galleryAgrandir}</p>
 
 			{open && createPortal(lightbox, document.body)}
 		</div>

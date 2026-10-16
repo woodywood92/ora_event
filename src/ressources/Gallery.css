@@ -92,6 +92,10 @@
 	background: #c47b3a;
 }
 
+.dark .gallery-dot--active {
+	background: #c47b3a;
+}
+
 .gallery-hint {
 	text-align: center;
 	font-size: 12px;

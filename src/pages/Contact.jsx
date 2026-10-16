@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useSite } from '../context/SiteContext';
 import Reveal from '../components/Reveal';
-import './Contact.css';
+import '../ressources/Contact.css';
 
 export default function Contact() {
 	const { t } = useSite();

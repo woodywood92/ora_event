@@ -127,6 +127,7 @@
     aspect-ratio: 16 / 9;
     border: 1px solid rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    border-radius: 16px;
 }
 
 .colline-virtual-iframe {
