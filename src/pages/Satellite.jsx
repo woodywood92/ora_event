@@ -6,14 +6,7 @@ import Reveal from '../components/Reveal';
 import '../ressources/Satellite.css';
 import Gallery from '../components/Gallery';
 
-const MATTERPORT_EMBED_URL_LOUNGE_RDJ =
-	'https://shoootin.com/scan/6ac4b57d7f82204a39d13980';
-const SECTION_IMGS = [
-	PHOTOS.reception,
-	PHOTOS.meeting,
-	PHOTOS.auditorium,
-	PHOTOS.colline_amphi_full,
-];
+const MATTERPORT_EMBED_URL_LOUNGE_RDJ = 'https://shoootin.com/scan/6ac4b57d7f82204a39d13980';
 
 export default function Satellite() {
 	const { t } = useSite();
@@ -104,11 +97,7 @@ export default function Satellite() {
 						</Reveal>
 						<Reveal>
 							<Gallery
-								photos={
-									s.photos ?? [
-										{ src: SECTION_IMGS[i % SECTION_IMGS.length], alt: s.title },
-									]
-								}
+								photos={s.photos}
 							/>
 						</Reveal>
 					</div>

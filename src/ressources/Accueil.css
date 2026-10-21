@@ -275,7 +275,7 @@
 }
 @media (min-width: 768px) {
 	.lieux__grid {
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(2, 1fr);
 	}
 }
 
@@ -299,6 +299,7 @@
 	display: block;
 	overflow: hidden;
 	height: 380px;
+	border-radius: 16px;
 }
 .lieu-card__img {
 	width: 100%;

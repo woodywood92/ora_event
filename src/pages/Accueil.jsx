@@ -6,8 +6,14 @@ import { useSite } from '../context/SiteContext';
 import Reveal from '../components/Reveal';
 import '../ressources/Accueil.css';
 
-const SLIDES_IMG = [PHOTOS.auditorium, PHOTOS.reception, PHOTOS.meeting];
-const LIEUX_IMG = [PHOTOS.auditorium, PHOTOS.meeting, PHOTOS.reception];
+import collineImg from "../ressources/images/Amphi/amphi_full.webp";
+import satelliteImg from "../ressources/images/Auditorium/auditorium_face.webp";
+
+const ACCUEIL_IMG = [PHOTOS.facade_accueil, PHOTOS.colline_lustre, PHOTOS.salle_de_reunion_accueil];
+const LIEUX_CARDS = [
+	{ to: "/Colline", img: collineImg },
+	{ to: "/Satellite", img: satelliteImg },
+];
 
 export default function Accueil() {
 	const { t } = useSite();
@@ -33,7 +39,7 @@ export default function Accueil() {
 function Hero({ t, slide, setSlide }) {
 	return (
 		<section id="accueil" className="hero">
-			{SLIDES_IMG.map((img, i) => (
+			{ACCUEIL_IMG.map((img, i) => (
 				<img
 					key={i}
 					src={img}
@@ -138,8 +144,8 @@ function NosLieux({ t }) {
 			<div className="lieux__grid">
 				{t.lieux.map((l, i) => (
 					<Reveal key={l.nom}>
-						<Link to="/nos-espaces" className="lieu-card">
-							<img src={LIEUX_IMG[i]} alt={l.nom} className="lieu-card__img" />
+						<Link to={LIEUX_CARDS[i].to} className="lieu-card">
+							<img src={LIEUX_CARDS[i].img} alt={l.nom} className="lieu-card__img" />
 							<div className="lieu-card__overlay" />
 							<div className="lieu-card__text">
 								<p className="lieu-card__tag">{l.tag}</p>

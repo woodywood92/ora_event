@@ -1,64 +1,67 @@
-import colline_amphi_full from './ressources/images/Amphi/amphi_full.jpg';
-import colline_amphi_bas from './ressources/images/Amphi/amphi_contre_plongee.jpg';
-import colline_amphi_regi from './ressources/images/Amphi/amphi_regie.jpg';
+import colline_amphi_full from './ressources/images/Amphi/amphi_full.webp';
+import colline_amphi_bas from './ressources/images/Amphi/amphi_contre_plongee.webp';
+import colline_amphi_regi from './ressources/images/Amphi/amphi_regie.webp';
 
-import auditorium_face from './ressources/images/Auditorium/auditorium_face.jpg';
-import auditorium_profil from './ressources/images/Auditorium/auditorium_profil.jpg';
-import foyer_principal from './ressources/images/Foyer/foyer_principal.jpg';
-import foyer_profil from './ressources/images/Foyer/foyer_profil.jpg';
-import lounge_principal from './ressources/images/Lounge/lounge_principal.jpg';
+import auditorium_face from './ressources/images/Auditorium/auditorium_face.webp';
+import auditorium_profil from './ressources/images/Auditorium/auditorium_profil.webp';
+import foyer_principal from './ressources/images/Foyer/foyer_principal.webp';
+import foyer_profil from './ressources/images/Foyer/foyer_profil.webp';
+import lounge_principal from './ressources/images/Lounge/lounge_principal.webp';
 import rooftop_ia from './ressources/images/Rooftop/rooftop_ia.png';
-import rooftop_principal from './ressources/images/Rooftop/rooftop_principal.jpg';
-import rooftop_secondaire from './ressources/images/Rooftop/rooftop_secondaire.jpg';
-import auditorium_plafond from './ressources/images/Auditorium/auditorium_plafond.jpg';
-import auditorium_face_plafond from './ressources/images/Auditorium/auditorium_face_plafond.jpg';
-import lounge_secondaire from './ressources/images/Lounge/lounge_secondaire.jpg';
-import lounge_chaises from './ressources/images/Lounge/lounge_chaises.jpg';
-import lounge_profil from './ressources/images/Lounge/lounge_profil.jpg';
-import lounge_full from './ressources/images/Lounge/lounge_full.jpg';
-import lounge_tabouret from './ressources/images/Lounge/lounge_tabouret.jpg';
-import salle_conseil from './ressources/images/Salle du Conseil/Salle du conseil.jpg';
-import salle_conseil_face from './ressources/images/Salle du Conseil/Salle du conseil_face.jpg';
-import salle_conseil_full from './ressources/images/Salle du Conseil/Salle du conseil_full.jpg';
-import foyer_full from './ressources/images/Foyer/foyer_full.jpg';
-import foyer_chaises from './ressources/images/Foyer/foyer_chaises.jpg';
-import patio_satellite_1 from './ressources/images/Patio/patio_satellite_1.jpg';
-import patio_satellite_2 from './ressources/images/Patio/patio_satellite_2.jpg';
+import rooftop_principal from './ressources/images/Rooftop/rooftop_principal.webp';
+import rooftop_secondaire from './ressources/images/Rooftop/rooftop_secondaire.webp';
+import auditorium_plafond from './ressources/images/Auditorium/auditorium_plafond.webp';
+import auditorium_face_plafond from './ressources/images/Auditorium/auditorium_face_plafond.webp';
+import lounge_secondaire from './ressources/images/Lounge/lounge_secondaire.webp';
+import lounge_chaises from './ressources/images/Lounge/lounge_chaises.webp';
+import lounge_profil from './ressources/images/Lounge/lounge_profil.webp';
+import lounge_full from './ressources/images/Lounge/lounge_full.webp';
+import lounge_tabouret from './ressources/images/Lounge/lounge_tabouret.webp';
+import salle_conseil from './ressources/images/Salle du Conseil/Salle du conseil.webp';
+import salle_conseil_face from './ressources/images/Salle du Conseil/Salle du conseil_face.webp';
+import salle_conseil_full from './ressources/images/Salle du Conseil/Salle du conseil_full.webp';
+import foyer_full from './ressources/images/Foyer/foyer_full.webp';
+import foyer_chaises from './ressources/images/Foyer/foyer_chaises.webp';
+import patio_satellite_1 from './ressources/images/Patio/patio_satellite_1.webp';
+import patio_satellite_2 from './ressources/images/Patio/patio_satellite_2.webp';
 
-import rooftop_effeil from './ressources/images/Rooftop/rooftop_effeil.jpg';
-import rooftop_montparnasse from './ressources/images/Rooftop/rooftop_montparnasse.jpg';
-import rooftop_pyramide from './ressources/images/Rooftop/rooftop_pyramide.jpg';
+import rooftop_effeil from './ressources/images/Rooftop/rooftop_effeil.webp';
+import rooftop_montparnasse from './ressources/images/Rooftop/rooftop_montparnasse.webp';
+import rooftop_pyramide from './ressources/images/Rooftop/rooftop_pyramide.webp';
 
-import jardin_exterieur from './ressources/images/Jardin/jardin_exterieur.jpg';
-import facade_exterieur from './ressources/images/Facade/facade_exterieur.jpg';
-import lustre from './ressources/images/Facade/lustre.jpg';
-import facade from './ressources/images/Facade/facade.jpg';
-import restaurant_principal from './ressources/images/Restaurant/restaurant_principal.jpg';
-import restaurant_profil from './ressources/images/Restaurant/restaurant_profil.jpg';
+import jardin_exterieur from './ressources/images/Jardin/jardin_exterieur.webp';
+import facade_exterieur from './ressources/images/Facade/facade_exterieur.webp';
+import lustre from './ressources/images/Facade/lustre.webp';
+import facade from './ressources/images/Facade/facade.webp';
+import restaurant_principal from './ressources/images/Restaurant/restaurant_principal.webp';
+import restaurant_profil from './ressources/images/Restaurant/restaurant_profil.webp';
 
-import business_center_principal from './ressources/images/Business Center/business_center_principal.jpg';
-import business_center_chaise from './ressources/images/Business Center/business_center_chaise.jpg';
-import business_center_canape from './ressources/images/Business Center/business_center_canape.jpg';
+import business_center_principal from './ressources/images/Business Center/business_center_principal.webp';
+import business_center_chaise from './ressources/images/Business Center/business_center_chaise.webp';
+import business_center_canape from './ressources/images/Business Center/business_center_canape.webp';
 
-import colline_foyer_principal from './ressources/images/Colline Foyer/colline_foyer_principal.jpg';
-import colline_foyer_fixe from './ressources/images/Colline Foyer/colline_foyer_fixe.jpg';
-import colline_foyer_chaises from './ressources/images/Colline Foyer/colline_foyer_chaises.jpg';
+import colline_foyer_principal from './ressources/images/Colline Foyer/colline_foyer_principal.webp';
+import colline_foyer_fixe from './ressources/images/Colline Foyer/colline_foyer_fixe.webp';
+import colline_foyer_chaises from './ressources/images/Colline Foyer/colline_foyer_chaises.webp';
 
-import salle_de_reunion_principal from './ressources/images/Salle de Réunion Annexe/salle_de_reunion_principal.jpg';
-import salle_de_reunion_1 from './ressources/images/Salle de Réunion Annexe/salle_de_reunion_1.jpg';
-import salle_de_reunion_2 from './ressources/images/Salle de Réunion Annexe/salle_de_reunion_2.jpg';
-import salle_de_reunion_3 from './ressources/images/Salle de Réunion Annexe/salle_de_reunion_3.jpg';
-import salle_de_reunion_4 from './ressources/images/Salle de Réunion Annexe/salle_de_reunion_4.jpg';
-import salle_de_reunion_5 from './ressources/images/Salle de Réunion Annexe/salle_de_reunion_5.jpg';
+import salle_de_reunion_principal from './ressources/images/Salle de Réunion Annexe/salle_de_reunion_principal.webp';
+import salle_de_reunion_1 from './ressources/images/Salle de Réunion Annexe/salle_de_reunion_1.webp';
+import salle_de_reunion_2 from './ressources/images/Salle de Réunion Annexe/salle_de_reunion_2.webp';
+import salle_de_reunion_3 from './ressources/images/Salle de Réunion Annexe/salle_de_reunion_3.webp';
+import salle_de_reunion_4 from './ressources/images/Salle de Réunion Annexe/salle_de_reunion_4.webp';
+import salle_de_reunion_5 from './ressources/images/Salle de Réunion Annexe/salle_de_reunion_5.webp';
 
-import colline_patio_principal from './ressources/images/Colline Patio/colline_patio_principal.jpg';
-import colline_patio_ext_1 from './ressources/images/Colline Patio/colline_patio_ext_1.jpg';
-import colline_patio_ext_2 from './ressources/images/Colline Patio/colline_patio_ext_2.jpg';
-import colline_patio_ext_3 from './ressources/images/Colline Patio/colline_patio_ext_3.jpg';
+import colline_patio_principal from './ressources/images/Colline Patio/colline_patio_principal.webp';
+import colline_patio_ext_1 from './ressources/images/Colline Patio/colline_patio_ext_1.webp';
+import colline_patio_ext_2 from './ressources/images/Colline Patio/colline_patio_ext_2.webp';
+import colline_patio_ext_3 from './ressources/images/Colline Patio/colline_patio_ext_3.webp';
 
-import fitness_principal from './ressources/images/Fitness/Fitness.jpg';
-import fitness_1 from './ressources/images/Fitness/Fitness_1.jpg';
-import fitness_2 from './ressources/images/Fitness/Fitness_2.jpg';
+import fitness_principal from './ressources/images/Fitness/Fitness.webp';
+import fitness_1 from './ressources/images/Fitness/Fitness_1.webp';
+import fitness_2 from './ressources/images/Fitness/Fitness_2.webp';
+
+import facade_accueil from './ressources/images/Facade/facade_accueil.webp';
+import salle_de_reunion_6 from './ressources/images/Salle de Réunion Annexe/salle_de_reunion_6.webp';
 
 export const dict = {
 	fr: {
@@ -121,11 +124,11 @@ export const dict = {
 				tag: 'Format modulable',
 				desc: 'Un espace flexible, adapté aux formats hybrides, digitaux et en comité restreint.',
 			},
-			{
+/*			{
 				nom: 'Espace réception',
 				tag: 'Cocktails & dîners',
 				desc: 'Pour vos cocktails, dîners et moments de convivialité entre équipes ou partenaires.',
-			},
+			},*/
 		],
 		rseTtile: 'Nos engagements RSE',
 		rseIntro:
@@ -484,11 +487,11 @@ export const dict = {
 				tag: 'Modular format',
 				desc: 'A flexible space, suited to hybrid, digital and smaller-scale formats.',
 			},
-			{
+/*			{
 				nom: 'Reception space',
 				tag: 'Cocktails & dinners',
 				desc: 'For your cocktails, dinners and moments of connection with teams or partners.',
-			},
+			},*/
 		],
 		infos: {
 			capacite: {
@@ -813,4 +816,7 @@ export const PHOTOS = {
 	satellite_rooftop_principal: rooftop_principal,
 	satellite_rooftop_secondaire: rooftop_secondaire,
 	satellite_rooftop_ia: rooftop_ia,
+
+	salle_de_reunion_accueil: salle_de_reunion_6,
+	facade_accueil: facade_accueil
 };

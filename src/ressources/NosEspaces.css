@@ -68,7 +68,7 @@
 .nos-espaces-tag {
     font-size: 0.75rem;
     line-height: 1rem;
-    color: #5f7d6f;
+    color: #c47b3a;
     margin-bottom: 0.25rem;
 }
 
@@ -100,7 +100,7 @@
     font-size: 0.75rem;
     line-height: 1rem;
     letter-spacing: 0.15em;
-    color: #5f7d6f;
+    color: #c47b3a;
     margin-bottom: 0.75rem;
 }
 
@@ -125,7 +125,7 @@
 .nos-espaces-check {
     margin-top: 0.125rem;
     flex-shrink: 0;
-    color: #5f7d6f;
+    color: #c47b3a;
 }
 
 .nos-espaces-virtual-tour {
@@ -195,7 +195,7 @@
 }
 
 .dark .nos-espaces-tag, .dark .nos-espaces-info-title, .dark .nos-espaces-check {
-    color: #8fa79b;
+    color: #c47b3a;
 }
 
 .dark .nos-espaces-infos {
@@ -233,7 +233,7 @@
     }
 
     .nos-espaces-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .nos-espaces-infos {

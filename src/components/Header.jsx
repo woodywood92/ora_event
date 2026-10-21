@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Sun, Moon, Menu, X } from 'lucide-react';
 import { useSite } from '../context/SiteContext';
 import '../ressources/Header.css';
+import logo from '../ressources/public/logo-carre-vaugirard.svg';
 
 const NAV_ITEMS = [
 	{ to: '/', key: 'accueil' },
@@ -19,8 +20,12 @@ export default function Header() {
 		<>
 			<header className="header">
 				<div className="header__inner">
-					<Link to="/" className="header__logo">
-						Le Carré <span>Vaugirard</span>
+					<Link to="/" className="header__logo" aria-label="Le Carré ">
+						<img
+							src={logo}
+							alt="Le Carré Vaugirard"
+							className="header__logo-mark"
+						/>
 					</Link>
 					<nav className="header__nav">
 						{NAV_ITEMS.map((item) => (
