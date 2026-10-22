@@ -1,16 +1,16 @@
 import React from "react";
 import { useReveal } from "../useReveal";
+import "../ressources/Motion.css";
 
-export default function Reveal({ children, className = "" }) {
+export default function Reveal({ children, className = "", variant = "up", delay = 0 }) {
   const [ref, inView] = useReveal();
   return (
-    <div
-      ref={ref}
-      className={`transition-all duration-700 ease-out ${
-        inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-      } ${className}`}
-    >
-      {children}
-    </div>
+      <div
+          ref={ref}
+          className={`reveal reveal--${variant} ${inView ? "reveal--in" : ""} ${className}`}
+          style={{ transitionDelay: `${delay}ms` }}
+      >
+        {children}
+      </div>
   );
 }

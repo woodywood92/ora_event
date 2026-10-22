@@ -111,6 +111,9 @@ export const dict = {
 			'Au Carré Vaugirard, deux espaces complémentaires permettent d’imaginer des événements sur mesure, depuis la réunion confidentielle de 10 personnes jusqu’au rendez-vous professionnel réunissant 400 personnes.',
 		lieuxDetail: 'En savoir plus',
 		lieuxTitle: 'Nos lieux',
+		lieuxAddress: '255 rue de Vaugirard · 75015 Paris',
+		lieuxNote: 'Deux espaces à la même adresse, chacun pensé pour accueillir vos événements en toute intimité.',
+
 		lieuxSub:
 			"Des espaces modulables, conçus pour s'adapter à tous les formats professionnels.",
 		lieux: [
@@ -124,11 +127,6 @@ export const dict = {
 				tag: 'Format modulable',
 				desc: 'Un espace flexible, adapté aux formats hybrides, digitaux et en comité restreint.',
 			},
-/*			{
-				nom: 'Espace réception',
-				tag: 'Cocktails & dîners',
-				desc: 'Pour vos cocktails, dîners et moments de convivialité entre équipes ou partenaires.',
-			},*/
 		],
 		rseTtile: 'Nos engagements RSE',
 		rseIntro:
@@ -136,6 +134,21 @@ export const dict = {
 		rseIntro2:
 			'Notre démarche RSE est évaluée par l’organisme FairScore au niveau A-. Une reconnaissance qui reflète les engagements que nous faisons vivre au quotidien, dans le choix de nos partenaires, la gestion de nos ressources et notre façon de concevoir chaque événement.',
 		rseDetail: 'Découvrir nos engagements',
+
+		services: {
+			eyebrow: 'Nos services',
+			title: 'Services',
+			items: [
+				{ title: 'Conseil & cadrage', desc: 'Analyse de vos besoins, recommandations de formats et optimisation des espaces.' },
+				{ title: 'Mise à disposition des lieux', desc: 'Espaces fonctionnels, modulables et conformes aux normes ERP.' },
+				{ title: 'Coordination technique & logistique', desc: 'Gestion des prestataires, installations techniques et flux opérationnels, en lien avec nos partenaires techniques et logistiques.' },
+				{ title: 'Location sèche d’espace', desc: 'Nous mettons à disposition des espaces nus et modulables. Ainsi vous gardez la main sur l’organisation de votre événement.' },
+				{ title: 'Animations', desc: 'Pour compléter votre expérience, des animations variées sont proposées : cours de yoga dans notre salle de fitness, cours de cuisine, ateliers œnologie et mixologie, ou sur-mesure.' },
+				{ title: 'Partenariats traiteurs & prestataires', desc: 'Accès à un réseau de traiteurs et de prestataires référencés, reconnus pour la qualité de leurs prestations et leur fiabilité opérationnelle.' },
+				{ title: 'Présence le jour J', desc: 'Supervision sur site pour garantir le bon déroulement de l’événement.' },
+				{ title: 'Prochainement…', desc: 'De nouveaux espaces sont en préparation : un rooftop, la Place du Village et la Terrasse Sud. Plus d’informations seront communiquées bientôt.' },
+			],
+		},
 		rseCommitments: {
 			inclusion: {
 				title: 'Inclusion',
@@ -472,6 +485,8 @@ export const dict = {
 			metro: '3 min from the metro',
 		},
 		lieuxTitle: 'Our places',
+		lieuxAddress: '255 rue de Vaugirard · 75015 Paris',
+		lieuxNote: 'Two spaces at the same address, each designed to host your events in complete privacy.',
 		lieuxIntroTitle: 'Two spaces, endless possibilities',
 		lieuxIntro:
 			'At Carré Vaugirard, two complementary spaces make it possible to create tailor-made events, from intimate meetings for 10 people to professional events welcoming up to 400 guests.',
@@ -487,11 +502,6 @@ export const dict = {
 				tag: 'Modular format',
 				desc: 'A flexible space, suited to hybrid, digital and smaller-scale formats.',
 			},
-/*			{
-				nom: 'Reception space',
-				tag: 'Cocktails & dinners',
-				desc: 'For your cocktails, dinners and moments of connection with teams or partners.',
-			},*/
 		],
 		infos: {
 			capacite: {
@@ -693,6 +703,20 @@ export const dict = {
 		rseIntro2:
 			'Our CSR approach has been assessed by FairScore at A- level. This recognition reflects the commitments we put into practice every day, from our choice of partners to resource management and the way we design each event.',
 		rseDetail: 'Discover our commitments',
+		services: {
+			eyebrow: 'Our services',
+			title: 'Services',
+			items: [
+				{ title: 'Consulting & scoping', desc: 'Analysis of your needs, format recommendations and space optimisation.' },
+				{ title: 'Venue provision', desc: 'Functional, modular spaces that comply with ERP standards.' },
+				{ title: 'Technical & logistics coordination', desc: 'Supplier management, technical installations and operational flows, in liaison with our technical and logistics partners.' },
+				{ title: 'Bare space hire', desc: 'We provide bare, modular spaces, so you keep full control of how your event is organised.' },
+				{ title: 'Entertainment', desc: 'A range of activities to complete your experience: yoga in our fitness room, cooking classes, wine and mixology workshops, or bespoke formats.' },
+				{ title: 'Caterer & supplier partnerships', desc: 'Access to a network of caterers and vetted suppliers, recognised for the quality of their services and operational reliability.' },
+				{ title: 'On-site presence on the day', desc: 'On-site supervision to ensure your event runs smoothly.' },
+				{ title: 'Coming soon…', desc: 'New spaces are in preparation: a rooftop, the Village Square and the South Terrace. More information will be shared soon.' },
+			],
+		},
 		rseCommitments: {
 			inclusion: {
 				title: 'Inclusion',

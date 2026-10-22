@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import { Sun, Moon, Menu, X } from 'lucide-react';
 import { useSite } from '../context/SiteContext';
 import '../ressources/Header.css';
+import { Link, useLocation } from "react-router-dom";
 import logo from '../ressources/public/logo-carre-vaugirard.svg';
 
 const NAV_ITEMS = [
@@ -15,10 +15,21 @@ const NAV_ITEMS = [
 export default function Header() {
 	const { dark, setDark, lang, setLang, t } = useSite();
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+	const { pathname } = useLocation();
+	const [scrolled, setScrolled] = useState(false);
+
+	useEffect(() => {
+		const onScroll = () => setScrolled(window.scrollY > 40);
+		onScroll();
+		window.addEventListener("scroll", onScroll, { passive: true });
+		return () => window.removeEventListener("scroll", onScroll);
+	}, []);
+
+	const transparent = pathname === "/" && !scrolled;
 
 	return (
 		<>
-			<header className="header">
+			<header className={`header ${transparent ? "header--transparent" : ""}`}>
 				<div className="header__inner">
 					<Link to="/" className="header__logo" aria-label="Le Carré ">
 						<img
@@ -46,7 +57,7 @@ export default function Header() {
 							aria-label="Changer de thème"
 							className="header__icon-btn"
 						>
-							{dark ? <Sun size={16} /> : <Moon size={16} />}
+							{dark ? <Sun size={16}/> : <Moon size={16}/>}
 						</button>
 						<Link to="/contact" className="header__cta">
 							{t.nav.visite}
@@ -56,7 +67,7 @@ export default function Header() {
 							aria-label="Ouvrir le menu"
 							className="header__icon-btn header__burger"
 						>
-							<Menu size={18} />
+							<Menu size={18}/>
 						</button>
 					</div>
 				</div>
