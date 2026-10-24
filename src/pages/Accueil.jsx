@@ -1,29 +1,55 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { PHOTOS } from '../i18n';
 import { useSite } from '../context/SiteContext';
 import Reveal from '../components/Reveal';
 import '../ressources/Accueil.css';
-import { useParallax } from "../useParallax";
-import { StatsParallax } from "../components/StatsShowcase";
-import { ArrowRight, MapPin, Users, Building2, Compass, Workflow, FileText, Sparkles, ChefHat, BellRing, Clock, Plane } from "lucide-react";
+import { useParallax } from '../useParallax';
+import { StatsParallax } from '../components/StatsShowcase';
+import {
+	ArrowRight,
+	MapPin,
+	Users,
+	Building2,
+	Compass,
+	Workflow,
+	FileText,
+	Sparkles,
+	ChefHat,
+	BellRing,
+	Clock,
+	Plane,
+} from 'lucide-react';
 
-import collineImg from "../ressources/images/Amphi/amphi_full.webp";
-import satelliteImg from "../ressources/images/Auditorium/auditorium_face.webp";
+import collineImg from '../ressources/images/Amphi/amphi_full.webp';
+import satelliteImg from '../ressources/images/Auditorium/auditorium_face.webp';
 
-import foyerImg from "../ressources/images/Foyer/foyer_principal.webp";
-import loungeImg from "../ressources/images/Lounge/lounge_principal.webp";
-import rooftopImg from "../ressources/images/Rooftop/rooftop_principal.webp";
-import restoImg from "../ressources/images/Restaurant/restaurant_salle.webp";
-import patioImg from "../ressources/images/Jardin/jardin_exterieur.webp";
+import foyerImg from '../ressources/images/Foyer/foyer_principal.webp';
+import loungeImg from '../ressources/images/Lounge/lounge_principal.webp';
+import rooftopImg from '../ressources/images/Rooftop/rooftop_principal.webp';
+import restoImg from '../ressources/images/Restaurant/restaurant_salle.webp';
+import patioImg from '../ressources/images/Jardin/jardin_exterieur.webp';
 
 const ACCOMP_IMG = [foyerImg, loungeImg, rooftopImg, restoImg, patioImg];
-const SERVICE_ICONS = [Compass, Building2, Workflow, FileText, Sparkles, ChefHat, BellRing, Clock];
+const SERVICE_ICONS = [
+	Compass,
+	Building2,
+	Workflow,
+	FileText,
+	Sparkles,
+	ChefHat,
+	BellRing,
+	Clock,
+];
 
-const ACCUEIL_IMG = [PHOTOS.facade_accueil, PHOTOS.colline_lustre, PHOTOS.salle_de_reunion_accueil];
+const ACCUEIL_IMG = [
+	PHOTOS.facade_accueil,
+	PHOTOS.colline_lustre,
+	PHOTOS.salle_de_reunion_accueil,
+];
 const LIEUX_CARDS = [
-	{ to: "/Colline", img: collineImg },
-	{ to: "/Satellite", img: satelliteImg },
+	{ to: '/Colline', img: collineImg },
+	{ to: '/Satellite', img: satelliteImg },
 ];
 
 export default function Accueil() {
@@ -85,7 +111,7 @@ function Hero({ t, slide, setSlide }) {
 						aria-label={`Slide ${i + 1}`}
 						className={`hero__dot ${i === slide ? 'hero__dot--active' : ''}`}
 					>
-					<span />
+						<span />
 					</button>
 				))}
 			</div>
@@ -157,7 +183,12 @@ function Accompagnement({ t }) {
 			</Reveal>
 
 			{r.reasons.map((item, i) => (
-				<AccompRow key={item.title} item={item} index={i} reverse={i % 2 === 1} />
+				<AccompRow
+					key={item.title}
+					item={item}
+					index={i}
+					reverse={i % 2 === 1}
+				/>
 			))}
 		</section>
 	);
@@ -168,15 +199,18 @@ function AccompRow({ item, index, reverse }) {
 	const digitY = useDigitMove(stackRef);
 
 	return (
-		<div className={`accomp__row ${reverse ? "accomp__row--reverse" : ""}`}>
-			<Reveal variant={reverse ? "right" : "left"} className="accomp__text">
+		<div className={`accomp__row ${reverse ? 'accomp__row--reverse' : ''}`}>
+			<Reveal variant={reverse ? 'right' : 'left'} className="accomp__text">
 				<h3 className="accomp__heading">{item.title}</h3>
 				<p className="accomp__paragraph">{item.text}</p>
 			</Reveal>
 
 			<div ref={stackRef} className="accomp__stack">
 				<Reveal variant="zoom" className="accomp__frame">
-					<ParallaxImg src={ACCOMP_IMG[index % ACCOMP_IMG.length]} alt={item.title} />
+					<ParallaxImg
+						src={ACCOMP_IMG[index % ACCOMP_IMG.length]}
+						alt={item.title}
+					/>
 				</Reveal>
 				<span
 					className="accomp__big"
@@ -203,29 +237,42 @@ function useDigitMove(ref) {
 				if (!el) return;
 				const rect = el.getBoundingClientRect();
 				const vh = window.innerHeight;
-				const p = Math.min(Math.max((vh - rect.top) / (vh + rect.height), 0), 1);
+				const p = Math.min(
+					Math.max((vh - rect.top) / (vh + rect.height), 0),
+					1,
+				);
 				const eased = p * p * (3 - 2 * p); // courbe douce début / fin
 				setY(-eased * (el.offsetHeight + 40));
 			});
 		};
 		update();
-		window.addEventListener("scroll", update, { passive: true });
-		window.addEventListener("resize", update);
+		window.addEventListener('scroll', update, { passive: true });
+		window.addEventListener('resize', update);
 		return () => {
 			cancelAnimationFrame(raf);
-			window.removeEventListener("scroll", update);
-			window.removeEventListener("resize", update);
+			window.removeEventListener('scroll', update);
+			window.removeEventListener('resize', update);
 		};
 	}, [ref]);
 
 	return y;
 }
 
+// Safari (et iOS) : on garde l'image fixe, sans décalage, pour éviter le défaut
+const IS_SAFARI =
+	typeof navigator !== 'undefined' &&
+	/^((?!chrome|chromium|android).)*safari/i.test(navigator.userAgent);
+
 function ParallaxImg({ src, alt }) {
 	const [ref, y] = useParallax(0.15);
+	const offset = IS_SAFARI ? 0 : Math.max(-40, Math.min(40, y));
 	return (
 		<div ref={ref} className="accomp__img-wrap">
-			<img src={src} alt={alt} style={{ transform: `translateY(${y}px) scale(1.2)` }} />
+			<img
+				src={src}
+				alt={alt}
+				style={{ transform: `translate3d(0, ${offset}px, 0)` }}
+			/>
 		</div>
 	);
 }
@@ -247,12 +294,12 @@ function useProgress(ref) {
 			});
 		};
 		update();
-		window.addEventListener("scroll", update, { passive: true });
-		window.addEventListener("resize", update);
+		window.addEventListener('scroll', update, { passive: true });
+		window.addEventListener('resize', update);
 		return () => {
 			cancelAnimationFrame(raf);
-			window.removeEventListener("scroll", update);
-			window.removeEventListener("resize", update);
+			window.removeEventListener('scroll', update);
+			window.removeEventListener('resize', update);
 		};
 	}, [ref]);
 
@@ -289,8 +336,17 @@ function FlightPath({ progress: p }) {
 
 	return (
 		<>
-			<svg className="svc-trail" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-				<path pathLength="1" d="M -5 60 Q 40 0 105 40" style={{ strokeDashoffset: 1 - p }} />
+			<svg
+				className="svc-trail"
+				viewBox="0 0 100 100"
+				preserveAspectRatio="none"
+				aria-hidden="true"
+			>
+				<path
+					pathLength="1"
+					d="M -5 60 Q 40 0 105 40"
+					style={{ strokeDashoffset: 1 - p }}
+				/>
 			</svg>
 			<span
 				className="svc-plane"
@@ -328,7 +384,9 @@ function Services({ t }) {
 					return (
 						<Reveal key={s.title} variant="up" delay={(i % 4) * 120}>
 							<article className="svc-card">
-								<span className="svc-num">{String(i + 1).padStart(2, "0")}</span>
+								<span className="svc-num">
+									{String(i + 1).padStart(2, '0')}
+								</span>
 								<span className="svc-icon">
 									<Icon size={30} strokeWidth={1.6} />
 								</span>
