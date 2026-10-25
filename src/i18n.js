@@ -75,6 +75,13 @@ export const dict = {
 			enSavoirPlus: 'En savoir plus',
 			galleryAgrandir: 'Cliquez sur la photo pour agrandir',
 		},
+		metro: {
+			title: 'Accès en métro',
+			home: 'Station Vaugirard',
+			note: '255 rue de Vaugirard',
+			l12Desc: 'Ligne 12 · station Vaugirard, à deux pas du Carré.',
+			l6Desc: 'Ligne 6 · station Pasteur, à environ 7 min à pied.',
+		},
 		slides: [
 			{
 				n: '01',
@@ -133,7 +140,22 @@ export const dict = {
 		rseIntro2:
 			'Notre démarche RSE est évaluée par l’organisme FairScore au niveau A-. Une reconnaissance qui reflète les engagements que nous faisons vivre au quotidien, dans le choix de nos partenaires, la gestion de nos ressources et notre façon de concevoir chaque événement.',
 		rseDetail: 'Découvrir nos engagements',
-
+		galerie: {
+			eyebrow: 'Galerie',
+			title: 'Nos espaces en images',
+			filters: {
+				all: 'Tous',
+				colline: 'La Colline',
+				satellite: 'Le Satellite',
+				reception: 'Réception',
+				rooftop: 'Rooftop',
+				exterieur: 'Extérieur',
+			},
+		},
+		quote: {
+			text: 'Un lieu. Plusieurs formats. Une multitude de possibilités.',
+			by: 'Ora Events',
+		},
 		services: {
 			eyebrow: 'Nos services',
 			title: 'Services',
@@ -476,6 +498,13 @@ export const dict = {
 			enSavoirPlus: 'Learn more',
 			galleryAgrandir: 'Click on the image to enlarge.',
 		},
+		metro: {
+			title: 'Getting here by metro',
+			home: 'Vaugirard station',
+			note: '255 rue de Vaugirard',
+			l12Desc: 'Line 12 · Vaugirard station, a short walk away.',
+			l6Desc: 'Line 6 · Pasteur station, about a 7-minute walk.',
+		},
 		slides: [
 			{ n: '01', title: 'A premium event venue in the heart of Paris' },
 			{
@@ -727,6 +756,22 @@ export const dict = {
 		rseIntro2:
 			'Our CSR approach has been assessed by FairScore at A- level. This recognition reflects the commitments we put into practice every day, from our choice of partners to resource management and the way we design each event.',
 		rseDetail: 'Discover our commitments',
+		galerie: {
+			eyebrow: 'Gallery',
+			title: 'Our spaces in pictures',
+			filters: {
+				all: 'All',
+				colline: 'La Colline',
+				satellite: 'Le Satellite',
+				reception: 'Reception',
+				rooftop: 'Rooftop',
+				exterieur: 'Outdoors',
+			},
+		},
+		quote: {
+			text: 'One venue. Several formats. Countless possibilities.',
+			by: 'Ora Events',
+		},
 		services: {
 			eyebrow: 'Our services',
 			title: 'Services',

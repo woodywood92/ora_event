@@ -1,0 +1,87 @@
+.btt {
+	position: fixed;
+	right: 20px;
+	bottom: 24px;
+	z-index: 60;
+	width: 46px;
+	height: 46px;
+	border-radius: 50%;
+	border: 1px solid rgba(0, 0, 0, 0.12);
+	background: #fafaf8;
+	color: #15140f;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.35);
+	opacity: 0;
+	transform: translateY(12px) scale(0.9);
+	pointer-events: none;
+	transition:
+		opacity 0.35s ease,
+		transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
+		background-color 0.3s,
+		color 0.3s;
+}
+.dark .btt {
+	background: #262624;
+	color: #ededed;
+	border-color: rgba(255, 255, 255, 0.15);
+}
+.btt--on {
+	opacity: 1;
+	transform: none;
+	pointer-events: auto;
+}
+.btt:hover {
+	background: #c47b3a;
+	border-color: #c47b3a;
+	color: #fff;
+}
+.btt:focus-visible {
+	outline: 2px solid #c47b3a;
+	outline-offset: 3px;
+}
+
+/* Anneau de progression */
+.btt-ring {
+	position: absolute;
+	inset: -1px;
+	width: calc(100% + 2px);
+	height: calc(100% + 2px);
+	transform: rotate(-90deg);
+	pointer-events: none;
+}
+.btt-ring circle {
+	fill: none;
+	stroke-width: 2;
+}
+.btt-ring__bg {
+	stroke: rgba(0, 0, 0, 0.08);
+}
+.dark .btt-ring__bg {
+	stroke: rgba(255, 255, 255, 0.12);
+}
+.btt-ring__fg {
+	stroke: #c47b3a;
+	stroke-linecap: round;
+	transition: stroke-dashoffset 0.15s linear;
+}
+.btt:hover .btt-ring__fg {
+	stroke: #fff;
+}
+
+@media (min-width: 768px) {
+	.btt {
+		right: 32px;
+		bottom: 32px;
+		width: 50px;
+		height: 50px;
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+	.btt,
+	.btt-ring__fg {
+		transition: none;
+	}
+}

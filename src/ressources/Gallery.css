@@ -22,7 +22,7 @@
 }
 @media (min-width: 1200px) {
 	.gallery-slide {
-		height:370px;
+		height: 370px;
 	}
 }
 
@@ -71,29 +71,78 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-wrap: wrap;
 	gap: 8px;
 	margin-top: 16px;
 }
 .gallery-dot {
+	position: relative;
 	width: 8px;
-	height: 8px;
-	border-radius: 50%;
-	border: none;
+	height: 6px;
 	padding: 0;
+	border: none;
+	border-radius: 999px;
+	overflow: hidden;
 	background: rgba(0, 0, 0, 0.25);
 	cursor: pointer;
-	transition: all 0.2s;
+	transition:
+		width 0.5s cubic-bezier(0.2, 0.7, 0.2, 1),
+		background-color 0.4s ease;
 }
 .dark .gallery-dot {
 	background: rgba(255, 255, 255, 0.3);
 }
-.gallery-dot--active {
-	background: #c47b3a;
+.gallery-dot:hover {
+	background: rgba(196, 123, 58, 0.6);
 }
 
+/* Point actif : pilule avec une piste claire */
+.gallery-dot--active {
+	width: 44px;
+	background: rgba(196, 123, 58, 0.22);
+}
 .dark .gallery-dot--active {
+	background: rgba(196, 123, 58, 0.25);
+}
+.gallery-dot--active:hover {
+	background: rgba(196, 123, 58, 0.32);
+}
+
+/* Barre de progression */
+.gallery-dot__fill {
+	position: absolute;
+	inset: 0;
 	background: #c47b3a;
+	border-radius: inherit;
+	transform-origin: left center;
+	transform: scaleX(0);
+	animation-name: galleryDotFill;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+}
+.gallery--paused .gallery-dot__fill {
+	animation-play-state: paused;
+}
+
+@keyframes galleryDotFill {
+	from {
+		transform: scaleX(0);
+	}
+	to {
+		transform: scaleX(1);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.gallery-dot__fill {
+		display: none;
+	}
+	.gallery-dot--active {
+		background: #c47b3a;
+	}
+	.dark .gallery-dot--active {
+		background: #c47b3a;
+	}
 }
 
 .gallery-hint {

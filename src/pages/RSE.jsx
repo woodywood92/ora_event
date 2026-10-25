@@ -3,6 +3,7 @@ import { useSite } from '../context/SiteContext';
 import Reveal from '../components/Reveal';
 import '../ressources/RSE.css';
 import fairscoreImg from '../ressources/images/fairscore.png';
+import BackToTop from '../components/BackToTop';
 
 export default function RSE() {
 	const { t } = useSite();
@@ -51,6 +52,7 @@ export default function RSE() {
 					<p className="rse-closing__text">{r.closingText}</p>
 				</Reveal>
 			</section>
+			<BackToTop />
 		</div>
 	);
 }

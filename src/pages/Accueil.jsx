@@ -5,7 +5,11 @@ import { useSite } from '../context/SiteContext';
 import Reveal from '../components/Reveal';
 import '../ressources/Accueil.css';
 import { useParallax } from '../useParallax';
+import Galerie from '../components/Galerie';
+import QuoteBand from '../components/QuoteBand';
 import { StatsParallax } from '../components/StatsShowcase';
+import BackToTop from '../components/BackToTop';
+import '../ressources/MetroLine.css';
 import {
 	ArrowRight,
 	MapPin,
@@ -23,7 +27,6 @@ import {
 
 import collineImg from '../ressources/images/Amphi/amphi_full.webp';
 import satelliteImg from '../ressources/images/Auditorium/auditorium_face.webp';
-
 import foyerImg from '../ressources/images/Foyer/foyer_principal.webp';
 import loungeImg from '../ressources/images/Lounge/lounge_principal.webp';
 import rooftopImg from '../ressources/images/Rooftop/rooftop_principal.webp';
@@ -67,10 +70,13 @@ export default function Accueil() {
 			<Presentation t={t} />
 			<StatsParallax t={t} />
 			<NosLieux t={t} />
+			<Galerie t={t} />
+			<QuoteBand t={t} />
 			<Accompagnement t={t} />
 			<Services t={t} />
 			<RSE t={t} />
 			<Cta t={t} />
+			<BackToTop />
 		</div>
 	);
 }

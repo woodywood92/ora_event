@@ -1,17 +1,55 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import '../ressources/Gallery.css';
-import {useSite} from "../context/SiteContext.jsx";
+import { useSite } from '../context/SiteContext.jsx';
 
 export default function Gallery({ photos = [] }) {
-	const {t} = useSite();
+	const { t } = useSite();
 	const [index, setIndex] = useState(0);
 	const [open, setOpen] = useState(false);
 	const total = photos.length;
+	const [tick, setTick] = useState(0);
 
-	const prev = () => setIndex((i) => (i - 1 + total) % total);
-	const next = () => setIndex((i) => (i + 1) % total);
+	const prev = () => {
+		pause();
+		setIndex((i) => (i - 1 + total) % total);
+	};
+	const next = () => {
+		pause();
+		setIndex((i) => (i + 1) % total);
+	};
+
+	const AUTOPLAY_MS = 5000; // temps entre deux photos
+	const RESUME_MS = 8000; // délai avant reprise après une interaction (null = pause définitive)
+
+	const [paused, setPaused] = useState(false);
+	const resumeTimer = useRef(null);
+
+	// Met le diaporama en pause et planifie la reprise
+	const pause = () => {
+		setPaused(true);
+		clearTimeout(resumeTimer.current);
+		if (RESUME_MS) {
+			resumeTimer.current = setTimeout(() => {
+				setTick((t) => t + 1); // relance la barre de progression au même moment que le diaporama
+				setPaused(false);
+			}, RESUME_MS);
+		}
+	};
+	// Nettoie le timer quand le composant disparaît
+	useEffect(() => () => clearTimeout(resumeTimer.current), []);
+
+	// Diaporama automatique
+	useEffect(() => {
+		if (total < 2 || paused || open) return;
+		const reduce = window.matchMedia(
+			'(prefers-reduced-motion: reduce)',
+		).matches;
+		if (reduce) return;
+		const id = setInterval(() => setIndex((i) => (i + 1) % total), AUTOPLAY_MS);
+		return () => clearInterval(id);
+	}, [total, paused, open]);
 
 	useEffect(() => {
 		if (!open) return;
@@ -87,13 +125,16 @@ export default function Gallery({ photos = [] }) {
 	);
 
 	return (
-		<div className="gallery">
+		<div className={`gallery ${paused ? 'gallery--paused' : ''}`}>
 			<div className="gallery-slide">
 				<img
 					src={photos[index].src}
 					alt={photos[index].alt}
 					className="gallery-slide__img"
-					onClick={() => setOpen(true)}
+					onClick={() => {
+						pause();
+						setOpen(true);
+					}}
 				/>
 				<button
 					className="gallery-nav gallery-nav--prev"
@@ -115,10 +156,22 @@ export default function Gallery({ photos = [] }) {
 				{photos.map((_, i) => (
 					<button
 						key={i}
-						onClick={() => setIndex(i)}
+						type="button"
+						onClick={() => {
+							pause();
+							setIndex(i);
+						}}
 						aria-label={`Photo ${i + 1}`}
 						className={`gallery-dot ${i === index ? 'gallery-dot--active' : ''}`}
-					/>
+					>
+						{i === index && total > 1 && (
+							<span
+								key={`${index}-${tick}`}
+								className="gallery-dot__fill"
+								style={{ animationDuration: `${AUTOPLAY_MS}ms` }}
+							/>
+						)}
+					</button>
 				))}
 			</div>
 			<p className="gallery-hint">{t.nav.galleryAgrandir}</p>

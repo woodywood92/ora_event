@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { useSite } from '../context/SiteContext';
 import Reveal from '../components/Reveal';
 import '../ressources/Contact.css';
+import MetroLine from '../components/MetroLine';
 
 export default function Contact() {
 	const { t } = useSite();
@@ -14,29 +15,6 @@ export default function Contact() {
 				<p>{t.contactPage.intro}</p>
 			</Reveal>
 
-			<Reveal className="contact-reasons">
-				<div className="contact-reasons__header">
-					<h3 className="contact-reasons__title">
-						{t.contactPage.reasonsTitle}
-					</h3>
-					<span className="contact-reasons__eyebrow">
-						{t.contactPage.reasonsEyebrow}
-					</span>
-				</div>
-				<div className="contact-reasons__grid">
-					{t.contactPage.reasons.map((reason, index) => (
-						<div className="contact-reason" key={reason.title}>
-							<span className="contact-reason__number">0{index + 1}</span>
-
-							<div>
-								<h3>{reason.title}</h3>
-								<p>{reason.text}</p>
-							</div>
-						</div>
-					))}
-				</div>
-			</Reveal>
-
 			<div className="contact-content">
 				<Reveal className="contact-info">
 					<h2>{t.contact.title}</h2>
@@ -46,8 +24,8 @@ export default function Contact() {
 					<div className="contact-info__details">
 						<p>255 rue de Vaugirard, 75015 Paris</p>
 						<p>contact@ora-events.fr</p>
-						<p>{t.contact.metro}</p>
 						<p>{t.contact.gare}</p>
+						<MetroLine t={t} variant="animated" />
 					</div>
 				</Reveal>
 

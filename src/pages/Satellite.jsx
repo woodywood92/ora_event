@@ -5,8 +5,10 @@ import { useSite } from '../context/SiteContext';
 import Reveal from '../components/Reveal';
 import '../ressources/Satellite.css';
 import Gallery from '../components/Gallery';
+import BackToTop from '../components/BackToTop';
 
-const MATTERPORT_EMBED_URL_LOUNGE_RDJ = 'https://shoootin.com/scan/6ac4b57d7f82204a39d13980';
+const MATTERPORT_EMBED_URL_LOUNGE_RDJ =
+	'https://shoootin.com/scan/6ac4b57d7f82204a39d13980';
 
 export default function Satellite() {
 	const { t } = useSite();
@@ -38,11 +40,20 @@ export default function Satellite() {
 					<Gallery
 						photos={[
 							{ src: PHOTOS.satellite_auditorium_face, alt: "L'auditorium" },
-							{ src: PHOTOS.satellite_auditorium_profil, alt: "Espace modulable de l'auditorium" },
+							{
+								src: PHOTOS.satellite_auditorium_profil,
+								alt: "Espace modulable de l'auditorium",
+							},
 							{ src: PHOTOS.satellite_lounge_principal, alt: 'Espace Lounge' },
 							{ src: PHOTOS.satellite_rooftop_principal, alt: 'Le Rooftop' },
-							{ src: PHOTOS.satellite_rooftop_secondaire, alt: 'Le Rooftop vue Tour Eiffel' },
-							{ src: PHOTOS.satellite_rooftop_ia, alt: 'Le Rooftop Guinguette' },
+							{
+								src: PHOTOS.satellite_rooftop_secondaire,
+								alt: 'Le Rooftop vue Tour Eiffel',
+							},
+							{
+								src: PHOTOS.satellite_rooftop_ia,
+								alt: 'Le Rooftop Guinguette',
+							},
 							{ src: PHOTOS.satellite_foyer_principal, alt: 'Le Foyer' },
 							{ src: PHOTOS.satellite_foyer_profil, alt: 'Le Foyer accueil' },
 						]}
@@ -96,13 +107,12 @@ export default function Satellite() {
 							<p className="satellite-paragraph">{s.text}</p>
 						</Reveal>
 						<Reveal>
-							<Gallery
-								photos={s.photos}
-							/>
+							<Gallery photos={s.photos} />
 						</Reveal>
 					</div>
 				))}
 			</section>
+			<BackToTop />
 		</div>
 	);
 }
