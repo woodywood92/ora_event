@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Space+Grotesk:wght@500;700&display=swap');
+
+/* ---- Section épinglée : la hauteur crée la durée du scroll ---- */
+.quote {
+    position: relative;
+    background: #262624;
+}
+
+.quote__sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    height: 100svh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ---- Fond et parallaxe ---- */
+.quote__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    will-change: transform;
+}
+.quote__veil {
+    position: absolute;
+    inset: 0;
+    background:
+            linear-gradient(rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.06)),
+            rgba(38, 38, 36, 0.7);
+}
+
+/* Grand guillemet décoratif, en arrière-plan */
+.quote__orn {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    pointer-events: none;
+    will-change: transform;
+}
+.quote__orn span {
+    font-family: 'Pinyon Script', cursive;
+    font-size: clamp(14rem, 40vw, 32rem);
+    line-height: 0.8;
+    color: rgba(196, 123, 58, 0.14);
+    margin-top: 2vh;
+}
+
+/* ---- Texte ---- */
+.quote__inner {
+    position: relative;
+    z-index: 1;
+    padding: 0 1.5rem;
+    text-align: center;
+    max-width: 62rem;
+    will-change: transform;
+}
+
+.quote__text {
+    position: relative;
+    margin: 0;
+    font-family: 'Pinyon Script', cursive;
+    font-weight: 400;
+    font-size: clamp(2.6rem, 8.5vw, 6.5rem);
+    line-height: 1.25;
+    color: #fff;
+}
+
+/* Trace fantôme : le texte complet, très discret, pour voir ce qui vient */
+.quote__ghost {
+    position: absolute;
+    inset: 0;
+    color: rgba(255, 255, 255, 0.14);
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Chaque mot est révélé de gauche à droite */
+.quote__word {
+    display: inline-block;
+    position: relative;
+    will-change: clip-path, transform;
+}
+
+/* Plume : point lumineux orange qui avance sur l'écriture */
+.quote__nib {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    margin: -5px 0 0 -5px;
+    border-radius: 50%;
+    background: #C47B3A;
+    box-shadow:
+            0 0 0 4px rgba(196, 123, 58, 0.25),
+            0 0 18px 6px rgba(196, 123, 58, 0.6);
+    pointer-events: none;
+}
+
+/* ---- Pied : trait calligraphique et auteur ---- */
+.quote__foot {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    will-change: transform, opacity;
+}
+.quote__flourish {
+    width: min(320px, 70vw);
+    height: auto;
+    overflow: visible;
+}
+.quote__flourish path {
+    fill: none;
+    stroke: #C47B3A;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-dasharray: 1;
+}
+.quote__by {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* ---- Réduction des animations : citation affichée entière, sans épinglage ---- */
+@media (prefers-reduced-motion: reduce) {
+    .quote { height: auto !important; }
+    .quote__sticky {
+        position: relative;
+        height: auto;
+        min-height: 70vh;
+        padding: 6rem 0;
+    }
+    .quote__word { clip-path: none !important; transform: none !important; }
+    .quote__flourish path { stroke-dashoffset: 0 !important; }
+}

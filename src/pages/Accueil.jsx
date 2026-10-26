@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from 'react-router-dom';
 import { PHOTOS } from '../i18n';
 import { useSite } from '../context/SiteContext';
@@ -32,27 +32,15 @@ import loungeImg from '../ressources/images/Lounge/lounge_principal.webp';
 import rooftopImg from '../ressources/images/Rooftop/rooftop_principal.webp';
 import restoImg from '../ressources/images/Restaurant/restaurant_salle.webp';
 import patioImg from '../ressources/images/Jardin/jardin_exterieur.webp';
+import {useReveal} from "../useReveal.js";
 
 const ACCOMP_IMG = [foyerImg, loungeImg, rooftopImg, restoImg, patioImg];
-const SERVICE_ICONS = [
-	Compass,
-	Building2,
-	Workflow,
-	FileText,
-	Sparkles,
-	ChefHat,
-	BellRing,
-	Clock,
-];
+const SERVICE_ICONS = [Compass, Building2, Workflow, FileText, Sparkles, ChefHat, BellRing, Clock];
 
-const ACCUEIL_IMG = [
-	PHOTOS.facade_accueil,
-	PHOTOS.colline_lustre,
-	PHOTOS.salle_de_reunion_accueil,
-];
+const ACCUEIL_IMG = [PHOTOS.facade_accueil, PHOTOS.colline_lustre, PHOTOS.salle_de_reunion_accueil];
 const LIEUX_CARDS = [
-	{ to: '/Colline', img: collineImg },
-	{ to: '/Satellite', img: satelliteImg },
+	{ to: "/Colline", img: collineImg },
+	{ to: "/Satellite", img: satelliteImg },
 ];
 
 export default function Accueil() {
@@ -117,7 +105,7 @@ function Hero({ t, slide, setSlide }) {
 						aria-label={`Slide ${i + 1}`}
 						className={`hero__dot ${i === slide ? 'hero__dot--active' : ''}`}
 					>
-						<span />
+					{/*<span />*/}
 					</button>
 				))}
 			</div>
@@ -153,7 +141,7 @@ function NosLieux({ t }) {
 				<div className="lx-head">
 					<div className="lx-head__main">
 						<h2 className="lx-title">{t.lieuxIntroTitle}</h2>
-						<Link to="/nos-espaces" className="rse__link">
+						<Link to="/nos-espaces" className="hero__cta">
 							{t.nav.enSavoirPlus} <ArrowRight size={15} />
 						</Link>
 						<p className="lx-intro">{t.lieuxIntro}</p>
@@ -189,12 +177,7 @@ function Accompagnement({ t }) {
 			</Reveal>
 
 			{r.reasons.map((item, i) => (
-				<AccompRow
-					key={item.title}
-					item={item}
-					index={i}
-					reverse={i % 2 === 1}
-				/>
+				<AccompRow key={item.title} item={item} index={i} reverse={i % 2 === 1} />
 			))}
 		</section>
 	);
@@ -205,18 +188,15 @@ function AccompRow({ item, index, reverse }) {
 	const digitY = useDigitMove(stackRef);
 
 	return (
-		<div className={`accomp__row ${reverse ? 'accomp__row--reverse' : ''}`}>
-			<Reveal variant={reverse ? 'right' : 'left'} className="accomp__text">
+		<div className={`accomp__row ${reverse ? "accomp__row--reverse" : ""}`}>
+			<Reveal variant={reverse ? "right" : "left"} className="accomp__text">
 				<h3 className="accomp__heading">{item.title}</h3>
 				<p className="accomp__paragraph">{item.text}</p>
 			</Reveal>
 
 			<div ref={stackRef} className="accomp__stack">
 				<Reveal variant="zoom" className="accomp__frame">
-					<ParallaxImg
-						src={ACCOMP_IMG[index % ACCOMP_IMG.length]}
-						alt={item.title}
-					/>
+					<ParallaxImg src={ACCOMP_IMG[index % ACCOMP_IMG.length]} alt={item.title} />
 				</Reveal>
 				<span
 					className="accomp__big"
@@ -243,21 +223,18 @@ function useDigitMove(ref) {
 				if (!el) return;
 				const rect = el.getBoundingClientRect();
 				const vh = window.innerHeight;
-				const p = Math.min(
-					Math.max((vh - rect.top) / (vh + rect.height), 0),
-					1,
-				);
+				const p = Math.min(Math.max((vh - rect.top) / (vh + rect.height), 0), 1);
 				const eased = p * p * (3 - 2 * p); // courbe douce début / fin
 				setY(-eased * (el.offsetHeight + 40));
 			});
 		};
 		update();
-		window.addEventListener('scroll', update, { passive: true });
-		window.addEventListener('resize', update);
+		window.addEventListener("scroll", update, { passive: true });
+		window.addEventListener("resize", update);
 		return () => {
 			cancelAnimationFrame(raf);
-			window.removeEventListener('scroll', update);
-			window.removeEventListener('resize', update);
+			window.removeEventListener("scroll", update);
+			window.removeEventListener("resize", update);
 		};
 	}, [ref]);
 
@@ -300,12 +277,12 @@ function useProgress(ref) {
 			});
 		};
 		update();
-		window.addEventListener('scroll', update, { passive: true });
-		window.addEventListener('resize', update);
+		window.addEventListener("scroll", update, { passive: true });
+		window.addEventListener("resize", update);
 		return () => {
 			cancelAnimationFrame(raf);
-			window.removeEventListener('scroll', update);
-			window.removeEventListener('resize', update);
+			window.removeEventListener("scroll", update);
+			window.removeEventListener("resize", update);
 		};
 	}, [ref]);
 
@@ -342,17 +319,8 @@ function FlightPath({ progress: p }) {
 
 	return (
 		<>
-			<svg
-				className="svc-trail"
-				viewBox="0 0 100 100"
-				preserveAspectRatio="none"
-				aria-hidden="true"
-			>
-				<path
-					pathLength="1"
-					d="M -5 60 Q 40 0 105 40"
-					style={{ strokeDashoffset: 1 - p }}
-				/>
+			<svg className="svc-trail" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+				<path pathLength="1" d="M -5 60 Q 40 0 105 40" style={{ strokeDashoffset: 1 - p }} />
 			</svg>
 			<span
 				className="svc-plane"
@@ -390,9 +358,7 @@ function Services({ t }) {
 					return (
 						<Reveal key={s.title} variant="up" delay={(i % 4) * 120}>
 							<article className="svc-card">
-								<span className="svc-num">
-									{String(i + 1).padStart(2, '0')}
-								</span>
+								<span className="svc-num">{String(i + 1).padStart(2, "0")}</span>
 								<span className="svc-icon">
 									<Icon size={30} strokeWidth={1.6} />
 								</span>
@@ -406,48 +372,45 @@ function Services({ t }) {
 		</section>
 	);
 }
+
 function RSE({ t }) {
+	const [gaugeRef, gaugeIn] = useReveal();
+	const r = t.rsePage;
+
 	return (
 		<section id="rse" className="rse">
 			<div className="rse__inner">
-				<Reveal>
-					<div className="rse__header">
-						<div>
-							<p className="rse__eyebrow">RSE</p>
-							<h2 className="rse__title">{t.rsePage.title}</h2>
-						</div>
+				<div className="rse__side">
+					<Reveal>
+						<p className="rse__eyebrow">RSE</p>
+						<h2 className="rse__title">{r.title}</h2>
+					</Reveal>
 
-						<div className="rse__score">
-							<span>FairScore</span>
-							<strong>A-</strong>
-						</div>
-					</div>
-				</Reveal>
-
-				<Reveal>
-					<div className="rse__content">
-						<div className="rse__intro">
-							<p>{t.rsePage.introHome}</p>
-
-							<Link to="/rse" className="rse__link">
-								{t.nav.enSavoirPlus} <ArrowRight size={15} />
-							</Link>
-						</div>
-
-						<div className="rse__commitments">
-							{t.rsePage.pillars.slice(0, 3).map((pillar, i) => (
-								<div className="rse__item" key={pillar.title}>
-									<span className="rse__icon">{['🤝', '♻️', '🥕'][i]}</span>
-
-									<div>
-										<h3>{pillar.title}</h3>
-										<p>{pillar.desc}</p>
-									</div>
-								</div>
-							))}
+					<div ref={gaugeRef} className={`rse__gauge ${gaugeIn ? "rse__gauge--in" : ""}`}>
+						<svg viewBox="0 0 120 120" aria-hidden="true">
+							<circle className="rse__ring-bg" cx="60" cy="60" r="52" />
+							<circle className="rse__ring" cx="60" cy="60" r="52" />
+						</svg>
+						<div className="rse__grade">
+							<span>A-</span>
+							<small>FairScore</small>
 						</div>
 					</div>
-				</Reveal>
+					<Link to="/rse" className="hero__cta">
+						{t.nav.enSavoirPlus} <ArrowRight size={15} />
+					</Link>
+				</div>
+
+				<div className="rse__tiles">
+					{r.pillars.map((p, i) => (
+						<Reveal key={p.title} variant="up" delay={i * 90}>
+							<div className="rse__tile">
+								<span className="rse__icon">{p.icon}</span>
+								<span className="rse__label">{p.title}</span>
+							</div>
+						</Reveal>
+					))}
+				</div>
 			</div>
 		</section>
 	);
