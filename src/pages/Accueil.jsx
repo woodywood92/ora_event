@@ -10,10 +10,9 @@ import QuoteBand from '../components/QuoteBand';
 import { StatsParallax } from '../components/StatsShowcase';
 import BackToTop from '../components/BackToTop';
 import '../ressources/MetroLine.css';
+import Separator from "../components/Separator";
 import {
 	ArrowRight,
-	MapPin,
-	Users,
 	Building2,
 	Compass,
 	Workflow,
@@ -36,7 +35,8 @@ import {useReveal} from "../useReveal.js";
 
 const ACCOMP_IMG = [foyerImg, loungeImg, rooftopImg, restoImg, patioImg];
 const SERVICE_ICONS = [Compass, Building2, Workflow, FileText, Sparkles, ChefHat, BellRing, Clock];
-
+// Index des engagements affichés sur l'accueil, dans l'ordre voulu (HQE, partenaires, déchets)
+const HOME_PILLARS = [0, 1, 2];
 const ACCUEIL_IMG = [PHOTOS.facade_accueil, PHOTOS.colline_lustre, PHOTOS.salle_de_reunion_accueil];
 const LIEUX_CARDS = [
 	{ to: "/Colline", img: collineImg },
@@ -58,11 +58,12 @@ export default function Accueil() {
 			<Presentation t={t} />
 			<StatsParallax t={t} />
 			<NosLieux t={t} />
-			<Galerie t={t} />
-			<QuoteBand t={t} />
 			<Accompagnement t={t} />
 			<Services t={t} />
 			<RSE t={t} />
+			<Separator />
+			<Galerie t={t} />
+			<QuoteBand t={t} />
 			<Cta t={t} />
 			<BackToTop />
 		</div>
@@ -388,42 +389,48 @@ function RSE({ t }) {
 
 					<div ref={gaugeRef} className={`rse__gauge ${gaugeIn ? "rse__gauge--in" : ""}`}>
 						<svg viewBox="0 0 120 120" aria-hidden="true">
-							<circle className="rse__ring-bg" cx="60" cy="60" r="52" />
-							<circle className="rse__ring" cx="60" cy="60" r="52" />
+							<circle className="rse__ring-bg" cx="60" cy="60" r="52"/>
+							<circle className="rse__ring" cx="60" cy="60" r="52"/>
 						</svg>
 						<div className="rse__grade">
 							<span>A-</span>
 							<small>FairScore</small>
 						</div>
 					</div>
-					<Link to="/rse" className="hero__cta">
-						{t.nav.enSavoirPlus} <ArrowRight size={15} />
-					</Link>
 				</div>
 
-				<div className="rse__tiles">
-					{r.pillars.map((p, i) => (
-						<Reveal key={p.title} variant="up" delay={i * 90}>
-							<div className="rse__tile">
-								<span className="rse__icon">{p.icon}</span>
-								<span className="rse__label">{p.title}</span>
-							</div>
-						</Reveal>
-					))}
+				<div className="rse__col">
+					<div className="rse__tiles">
+						{HOME_PILLARS.map((idx, i) => {
+							const p = r.pillars[idx];
+							return (
+								<Reveal key={p.title} variant="up" delay={i * 90}>
+									<div className="rse__tile">
+										<span className="rse__icon">{p.icon}</span>
+										<span className="rse__label">{p.title}</span>
+									</div>
+								</Reveal>
+							);
+						})}
+					</div>
+
+					<Link to="/rse" className="hero__cta__without_margin_top">
+						{t.nav.enSavoirPlus} <ArrowRight size={15}/>
+					</Link>
 				</div>
 			</div>
 		</section>
 	);
 }
 
-function Cta({ t }) {
+function Cta({t}) {
 	return (
 		<section className="cta">
 			<Reveal>
 				<h2 className="cta__title">{t.contact.title}</h2>
 				<p className="cta__desc">{t.contact.desc}</p>
 				<Link to="/contact" className="cta__btn">
-					{t.form.send} <ArrowRight size={15} />
+					{t.form.send} <ArrowRight size={15}/>
 				</Link>
 			</Reveal>
 		</section>

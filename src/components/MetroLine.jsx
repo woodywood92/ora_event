@@ -9,14 +9,23 @@ const TRAVEL = 6000; // durée du trajet de la rame (ms), le reste est une pause
 
 // Ligne 12 : ordre autour du Carré (à vérifier sur le plan officiel)
 const LINE12 = [
+	{ name: 'Montparnasse - Bienvenüe' },
 	{ name: 'Falguière' },
 	{ name: 'Pasteur' },
 	{ name: 'Volontaires' },
 	{ name: 'Vaugirard', home: true },
-	{ name: 'Convention' },
 ];
 
-// Allume les stations une à une, et recommence à chaque cycle
+// Ligne 6 : ordre autour de Pasteur (à vérifier sur le plan officiel)
+const LINE6 = [
+	{ name: "Cambronne" },
+	{ name: "Sèvres–Lecourbe" },
+	{ name: "Pasteur", home: true},
+	{ name: "Montparnasse" },
+	{ name: "Edgar Quinet" },
+];
+
+// Allume les stations une à une, en boucle
 function useLitLoop(active, n) {
 	const [lit, setLit] = useState(0);
 
@@ -44,19 +53,23 @@ function useLitLoop(active, n) {
 	return lit;
 }
 
-function Rail({ stations, lit }) {
+// Une ligne : trait, rame, points et noms de stations
+function Rail({ stations, num, line, animated, active }) {
+	const lit = useLitLoop(animated && active, stations.length);
+	const litCount = animated ? lit : stations.length;
+
 	return (
-		<div className="ml-rail" style={{ '--n': stations.length }}>
+		<div className="ml-rail" style={{ "--n": stations.length, "--line": line }}>
 			<span className="ml-track">
 				<span className="ml-fill" />
 			</span>
-			<span className="ml-train">12</span>
+			<span className="ml-train">{num}</span>
 
 			<div className="ml-dots">
 				{stations.map((s, i) => (
 					<span key={s.name} className="ml-dot-wrap">
 						<span
-							className={`ml-dot ${s.home ? 'ml-dot--home' : ''} ${i < lit ? 'ml-dot--on' : ''}`}
+							className={`ml-dot ${s.home ? "ml-dot--home" : ""} ${i < litCount ? "ml-dot--on" : ""}`}
 						/>
 					</span>
 				))}
@@ -66,7 +79,7 @@ function Rail({ stations, lit }) {
 				{stations.map((s, i) => (
 					<span
 						key={s.name}
-						className={`ml-name ${s.home ? 'ml-name--home' : ''} ${i < lit ? 'ml-name--on' : ''}`}
+						className={`ml-name ${s.home ? "ml-name--home" : ""} ${i < litCount ? "ml-name--on" : ""}`}
 					>
 						{s.name}
 					</span>
@@ -76,38 +89,40 @@ function Rail({ stations, lit }) {
 	);
 }
 
-// variant="animated" : rame qui roule en boucle | variant="static" : infographie fixe
-export default function MetroLine({ t, variant = 'animated' }) {
+// variant="animated" : rames qui roulent en boucle | variant="static" : infographie fixe
+export default function MetroLine({ t, variant = "animated" }) {
 	const [ref, inView] = useReveal();
 	const m = t.metro;
 	const reduce =
-		typeof window !== 'undefined' &&
-		window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-	const animated = variant === 'animated' && !reduce;
-	const lit = useLitLoop(animated && inView, LINE12.length);
-	const litCount = animated ? lit : LINE12.length;
+		typeof window !== "undefined" &&
+		window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+	const animated = variant === "animated" && !reduce;
 
 	return (
 		<div
 			ref={ref}
-			className={`ml ${animated ? 'ml--animated' : 'ml--static'} ${inView ? 'ml--in' : ''}`}
+			className={`ml ${animated ? "ml--animated" : "ml--static"} ${inView ? "ml--in" : ""}`}
 		>
+			<p className="ml-title">{m.title}</p>
+
 			<div className="ml-line">
 				<span className="ml-logo-box">
 					<img src={logo12} alt="Ligne 12" />
 				</span>
 				<div className="ml-body">
-					<p className="ml-title">{m.title}</p>
-					<Rail stations={LINE12} lit={litCount} />
+					<Rail stations={LINE12} num="12" line="#007852" animated={animated} active={inView} />
 					<p className="ml-desc">{m.l12Desc}</p>
 				</div>
 			</div>
 
-			<div className="ml-near">
-				<span className="ml-logo-box">
+			<div className="ml-line">
+				<span className="ml-logo-box ml-logo-box--l6">
 					<img src={logo6} alt="Ligne 6" />
-				</span>{' '}
-				<p className="ml-desc">{m.l6Desc}</p>
+				</span>
+				<div className="ml-body">
+					<Rail stations={LINE6} num="6" line="#6ECA97" animated={animated} active={inView} />
+					<p className="ml-desc">{m.l6Desc}</p>
+				</div>
 			</div>
 		</div>
 	);

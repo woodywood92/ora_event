@@ -1,140 +1,71 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import quoteBg from "../ressources/images/Facade/shoootin-photo-71.webp";
 import "../ressources/Quote.css";
 
-const isReduced = () =>
-	typeof window !== "undefined" &&
-	window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const CYCLE_MS = 9000; // durée d'un cycle complet (écriture, pause, fondu)
 
 export default function QuoteBand({ t }) {
-	const sectionRef = useRef(null);
-	const textRef = useRef(null);
-	const wordRefs = useRef([]);
-	const [p, setP] = useState(0); // progression de la section, 0 → 1
-	const [geo, setGeo] = useState([]); // position de chaque mot
-	const reduce = isReduced();
+	const [cycle, setCycle] = useState(0);
 	const words = t.quote.text.split(" ");
 
 	useEffect(() => {
+		const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 		if (reduce) return;
-
-		let raf = 0;
-		const onScroll = () => {
-			cancelAnimationFrame(raf);
-			raf = requestAnimationFrame(() => {
-				const el = sectionRef.current;
-				if (!el) return;
-				const total = el.offsetHeight - window.innerHeight;
-				setP(Math.min(Math.max(-el.getBoundingClientRect().top / total, 0), 1));
-			});
-		};
-		const measure = () => {
-			setGeo(
-				wordRefs.current.map((w) =>
-					w ? { x: w.offsetLeft, y: w.offsetTop, w: w.offsetWidth, h: w.offsetHeight } : null
-				)
-			);
-		};
-		const onResize = () => {
-			onScroll();
-			measure();
-		};
-
-		onScroll();
-		measure();
-		window.addEventListener("scroll", onScroll, { passive: true });
-		window.addEventListener("resize", onResize);
-		window.addEventListener("load", measure);
-		return () => {
-			cancelAnimationFrame(raf);
-			window.removeEventListener("scroll", onScroll);
-			window.removeEventListener("resize", onResize);
-			window.removeEventListener("load", measure);
-		};
-	}, [reduce]);
-
-	// Écriture : 0 → 70 % du scroll, puis le trait et l'auteur apparaissent
-	const write = reduce ? 1 : Math.min(p / 0.7, 1);
-	const pos = write * words.length;
-	const active = Math.min(Math.floor(pos), words.length - 1);
-	const activeFrac = reduce ? 0 : Math.min(Math.max(pos - active, 0), 1);
-	const draw = reduce ? 1 : Math.min(Math.max((p - 0.6) / 0.3, 0), 1);
-	const by = reduce ? 1 : Math.min(Math.max((p - 0.72) / 0.18, 0), 1);
-	const showNib = !reduce && p < 0.7 && geo[active];
-
-	// Parallaxe : le fond ralentit, l'ornement monte plus vite, le texte se soulève doucement
-	const bgY = reduce ? 0 : p * 90;
-	const ornY = reduce ? 0 : p * -160;
-	const textY = reduce ? 0 : (0.5 - p) * 60;
-
-	const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
-	const pinHeight = reduce ? "auto" : isMobile ? "240vh" : "300vh";
+		const id = setInterval(() => setCycle((c) => c + 1), CYCLE_MS);
+		return () => clearInterval(id);
+	}, []);
 
 	return (
-		<section ref={sectionRef} className="quote" style={{ height: pinHeight }}>
-			<div className="quote__sticky">
-				<img
-					className="quote__bg"
-					src={quoteBg}
-					alt=""
-					style={{ transform: `translate3d(0, ${bgY}px, 0) scale(1.18)` }}
-				/>
-				<div className="quote__veil" />
-
-				<div className="quote__orn" aria-hidden="true" style={{ transform: `translate3d(0, ${ornY}px, 0)` }}>
-					<span>“</span>
-				</div>
-
-				<div className="quote__inner" style={{ transform: `translate3d(0, ${textY}px, 0)` }}>
-					<blockquote ref={textRef} className="quote__text" aria-label={t.quote.text}>
-						<span className="quote__ghost" aria-hidden="true">
-							{t.quote.text}
-						</span>
-
-						{words.map((w, i) => {
-							const prog = reduce ? 1 : Math.min(Math.max(pos - i, 0), 1);
-							return (
-								<React.Fragment key={i}>
-									<span
-										ref={(el) => (wordRefs.current[i] = el)}
-										className="quote__word"
-										style={{
-											clipPath: `inset(0 ${(1 - prog) * 100}% 0 0)`,
-											transform: `translate3d(0, ${(1 - prog) * 0.15}em, 0)`,
-											opacity: prog > 0 ? 1 : 0,
-										}}
-									>
-										{w}
-									</span>
-									{i < words.length - 1 && " "}
-								</React.Fragment>
-							);
-						})}
-
-						{showNib && (
-							<span
-								className="quote__nib"
-								style={{
-									left: geo[active].x + geo[active].w * activeFrac,
-									top: geo[active].y + geo[active].h * 0.82,
-								}}
-							/>
-						)}
+		<section className="quote" style={{ backgroundImage: `url(${quoteBg})` }}>
+			<div className="quote__veil">
+				{/* La clé change à chaque cycle : tout est remonté et l'animation repart */}
+				<div key={cycle} className="quote__content">
+					<blockquote className="quote__text" aria-label={t.quote.text}>
+						{words.map((w, i) => (
+							<React.Fragment key={i}>
+								{i > 0 && " "}
+								<span
+									className="quote__word"
+									style={{ animationDelay: `${i * 0.35}s` }}
+									aria-hidden="true"
+								>
+									{w}
+								</span>
+							</React.Fragment>
+						))}
 					</blockquote>
 
-					<div
-						className="quote__foot"
-						style={{
-							opacity: by,
-							transform: `translate3d(0, ${(1 - by) * 20}px, 0)`,
-						}}
-					>
-						<svg className="quote__flourish" viewBox="0 0 300 40" aria-hidden="true">
-							<path
-								pathLength="1"
-								d="M10 25 C 80 5, 140 40, 200 18 S 280 10, 292 26"
-								style={{ strokeDashoffset: 1 - draw }}
-							/>
+					<div className="quote__foot">
+						<svg className="quote__flourish" viewBox="0 0 64 64" aria-hidden="true">
+							<defs>
+								<linearGradient id="quoteGrad" x1="0" y1="0" x2="1" y2="0">
+									<stop offset="0" stopColor="#6E4423"/>
+									<stop offset="0.5" stopColor="#A66B36"/>
+									<stop offset="1" stopColor="#D9A46B"/>
+								</linearGradient>
+							</defs>
+							<g fill="none" stroke="url(#quoteGrad)" strokeWidth="2.6" strokeLinecap="round"
+							   strokeLinejoin="round">
+								<line pathLength="1" className="qf" style={{"--d": "0s"}} x1="4" y1="50" x2="60"
+									  y2="50"/>
+								<rect pathLength="1" className="qf" style={{"--d": "0.15s"}} x="6" y="30" width="7"
+									  height="20"/>
+								<rect pathLength="1" className="qf" style={{"--d": "0.25s"}} x="13" y="22" width="7"
+									  height="28"/>
+								<rect pathLength="1" className="qf" style={{"--d": "0.35s"}} x="20" y="34" width="6"
+									  height="16"/>
+								<rect pathLength="1" className="qf" style={{"--d": "0.45s"}} x="38" y="34" width="6"
+									  height="16"/>
+								<rect pathLength="1" className="qf" style={{"--d": "0.55s"}} x="44" y="24" width="7"
+									  height="26"/>
+								<rect pathLength="1" className="qf" style={{"--d": "0.65s"}} x="51" y="32" width="7"
+									  height="18"/>
+								<path pathLength="1" className="qf" style={{"--d": "0.75s"}} d="M26 50 V26 h12 V50"/>
+								<line pathLength="1" className="qf" style={{"--d": "1.05s"}} x1="32" y1="22" x2="32"
+									  y2="16"/>
+								<circle className="qf-cap" style={{"--d": "1.2s"}} cx="32" cy="14" r="1.6"
+										fill="url(#quoteGrad)"/>
+							</g>
 						</svg>
 						<p className="quote__by">{t.quote.by}</p>
 					</div>

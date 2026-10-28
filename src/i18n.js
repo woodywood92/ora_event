@@ -70,7 +70,7 @@ export const dict = {
 			lieux: 'Nos lieux',
 			espaces: 'Nos espaces',
 			rse: 'RSE',
-			contact: 'Contact',
+			contact: 'Contact & accès',
 			visite: 'Demander une visite',
 			enSavoirPlus: 'En savoir plus',
 			galleryAgrandir: 'Cliquez sur la photo pour agrandir',
@@ -79,8 +79,8 @@ export const dict = {
 			title: 'Accès en métro',
 			home: 'Station Vaugirard',
 			note: '255 rue de Vaugirard',
-			l12Desc: 'Ligne 12 · station Vaugirard, à deux pas du Carré.',
-			l6Desc: 'Ligne 6 · station Pasteur, à environ 7 min à pied.',
+			l12Desc: 'Ligne 12 · station Vaugirard, à 2 minutes à pied.',
+			l6Desc: 'Ligne 6 · station Pasteur, à environ 10 min à pied.',
 		},
 		slides: [
 			{
@@ -173,10 +173,6 @@ export const dict = {
 					desc: 'Gestion des prestataires, installations techniques et flux opérationnels, en lien avec nos partenaires techniques et logistiques.',
 				},
 				{
-					title: 'Location sèche d’espace',
-					desc: 'Nous mettons à disposition des espaces nus et modulables. Ainsi vous gardez la main sur l’organisation de votre événement.',
-				},
-				{
 					title: 'Animations',
 					desc: 'Pour compléter votre expérience, des animations variées sont proposées : cours de yoga dans notre salle de fitness, cours de cuisine, ateliers œnologie et mixologie, ou sur-mesure.',
 				},
@@ -187,10 +183,6 @@ export const dict = {
 				{
 					title: 'Présence le jour J',
 					desc: 'Supervision sur site pour garantir le bon déroulement de l’événement.',
-				},
-				{
-					title: 'Prochainement…',
-					desc: 'De nouveaux espaces sont en préparation : un rooftop, la Place du Village et la Terrasse Sud. Plus d’informations seront communiquées bientôt.',
 				},
 			],
 		},
@@ -413,15 +405,14 @@ export const dict = {
 			pillarsTitle: 'Des engagements qui se vivent au quotidien',
 			pillars: [
 				{
-					icon: '🍽️',
-					title: 'Lutter contre le gaspillage alimentaire',
-					desc: "Lorsque cela est possible, les surplus alimentaires peuvent être redistribués à des personnes sans-abri à proximité du Carré Vaugirard, afin que ce qui n'a pas été consommé puisse bénéficier à ceux qui en ont besoin.",
-				},
-
-				{
 					icon: '🏢',
 					title: 'Un bâtiment certifié HQE',
 					desc: "Le Carré Vaugirard s'inscrit dans un bâtiment certifié Haute Qualité Environnementale (HQE), une certification qui évalue notamment la performance énergétique, la gestion de l'eau et des ressources, ainsi que le confort et la qualité des espaces intérieurs.",
+				},
+				{
+					icon: '🥕',
+					title: 'Des partenaires engagés et locaux',
+					desc: 'Nous privilégions des partenaires engagés, les circuits courts, les produits et menus de saison, ainsi que les entreprises de proximité.',
 				},
 				{
 					icon: '♻️',
@@ -429,9 +420,9 @@ export const dict = {
 					desc: "De la préparation au démontage, nous cherchons à réduire l'empreinte de chaque événement : limitation des emballages et du plastique à usage unique, recours à des solutions réutilisables et choix de prestations pensées pour éviter le superflu.",
 				},
 				{
-					icon: '🥕',
-					title: 'Des partenaires engagés et locaux',
-					desc: 'Nous privilégions des partenaires engagés, les circuits courts, les produits et menus de saison, ainsi que les entreprises de proximité.',
+					icon: '🍽️',
+					title: 'Lutter contre le gaspillage alimentaire',
+					desc: "Lorsque cela est possible, les surplus alimentaires peuvent être redistribués à des personnes sans-abri à proximité du Carré Vaugirard, afin que ce qui n'a pas été consommé puisse bénéficier à ceux qui en ont besoin.",
 				},
 				{
 					icon: '🚶',
@@ -493,7 +484,7 @@ export const dict = {
 			lieux: 'Our venues',
 			espaces: 'Our spaces',
 			rse: 'CSR',
-			contact: 'Contact',
+			contact: 'Contact & Getting Here',
 			visite: 'Request a visit',
 			enSavoirPlus: 'Learn more',
 			galleryAgrandir: 'Click on the image to enlarge.',
@@ -502,8 +493,8 @@ export const dict = {
 			title: 'Getting here by metro',
 			home: 'Vaugirard station',
 			note: '255 rue de Vaugirard',
-			l12Desc: 'Line 12 · Vaugirard station, a short walk away.',
-			l6Desc: 'Line 6 · Pasteur station, about a 7-minute walk.',
+			l12Desc: 'Line 12 · Vaugirard station, a 2-minute walk.',
+			l6Desc: 'Line 6 · Pasteur station, about a 10-minute walk.',
 		},
 		slides: [
 			{ n: '01', title: 'A premium event venue in the heart of Paris' },
@@ -789,10 +780,6 @@ export const dict = {
 					desc: 'Supplier management, technical installations and operational flows, in liaison with our technical and logistics partners.',
 				},
 				{
-					title: 'Bare space hire',
-					desc: 'We provide bare, modular spaces, so you keep full control of how your event is organised.',
-				},
-				{
 					title: 'Entertainment',
 					desc: 'A range of activities to complete your experience: yoga in our fitness room, cooking classes, wine and mixology workshops, or bespoke formats.',
 				},
@@ -803,10 +790,6 @@ export const dict = {
 				{
 					title: 'On-site presence on the day',
 					desc: 'On-site supervision to ensure your event runs smoothly.',
-				},
-				{
-					title: 'Coming soon…',
-					desc: 'New spaces are in preparation: a rooftop, the Village Square and the South Terrace. More information will be shared soon.',
 				},
 			],
 		},
@@ -835,14 +818,14 @@ export const dict = {
 			pillarsTitle: 'Commitments we live by every day',
 			pillars: [
 				{
-					icon: '🍽️',
-					title: 'Fighting food waste',
-					desc: 'Where possible, surplus food is redistributed to people experiencing homelessness near Le Carré Vaugirard, so nothing goes to waste.',
-				},
-				{
 					icon: '🏢',
 					title: 'An HQE-certified building',
 					desc: 'Le Carré Vaugirard is part of a High Environmental Quality (HQE) certified building, assessing energy performance, water and resource management, and indoor comfort and quality.',
+				},
+				{
+					icon: '🥕',
+					title: 'Committed, local partners',
+					desc: 'We favour committed partners, local sourcing, seasonal products and menus, and nearby businesses.',
 				},
 				{
 					icon: '♻️',
@@ -850,9 +833,9 @@ export const dict = {
 					desc: "From setup to teardown, we work to reduce each event's footprint: limiting packaging and single-use plastic, using reusable solutions, and choosing services designed to avoid excess.",
 				},
 				{
-					icon: '🥕',
-					title: 'Committed, local partners',
-					desc: 'We favour committed partners, local sourcing, seasonal products and menus, and nearby businesses.',
+					icon: '🍽️',
+					title: 'Fighting food waste',
+					desc: 'Where possible, surplus food is redistributed to people experiencing homelessness near Le Carré Vaugirard, so nothing goes to waste.',
 				},
 				{
 					icon: '🚶',

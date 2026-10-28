@@ -1,127 +1,77 @@
 @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Space+Grotesk:wght@500;700&display=swap');
 
-/* ---- Section épinglée : la hauteur crée la durée du scroll ---- */
+/* ---- Section plein écran ---- */
 .quote {
     position: relative;
-    background: #262624;
+    min-height: 100vh;
+    min-height: 100svh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.quote__sticky {
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    height: 100svh;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* ---- Fond et parallaxe ---- */
-.quote__bg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    will-change: transform;
-}
+/* Voile gris à 6 % + fond sombre, par-dessus la photo */
 .quote__veil {
     position: absolute;
     inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 1.5rem;
+    text-align: center;
     background:
             linear-gradient(rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.06)),
             rgba(38, 38, 36, 0.7);
 }
 
-/* Grand guillemet décoratif, en arrière-plan */
-.quote__orn {
-    position: absolute;
-    inset: 0;
+/* Bloc qui se remonte à chaque cycle : fondu d'entrée, tenue, fondu de sortie */
+.quote__content {
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    pointer-events: none;
-    will-change: transform;
+    flex-direction: column;
+    align-items: center;
+    animation: quoteContent 9s ease both;
 }
-.quote__orn span {
-    font-family: 'Pinyon Script', cursive;
-    font-size: clamp(14rem, 40vw, 32rem);
-    line-height: 0.8;
-    color: rgba(196, 123, 58, 0.14);
-    margin-top: 2vh;
+@keyframes quoteContent {
+    0%   { opacity: 0; }
+    5%   { opacity: 1; }
+    88%  { opacity: 1; }
+    100% { opacity: 0; }
 }
 
-/* ---- Texte ---- */
-.quote__inner {
-    position: relative;
-    z-index: 1;
-    padding: 0 1.5rem;
-    text-align: center;
-    max-width: 62rem;
-    will-change: transform;
-}
-
+/* ---- Texte : écriture mot par mot ---- */
 .quote__text {
-    position: relative;
     margin: 0;
+    max-width: 62rem;
     font-family: 'Pinyon Script', cursive;
     font-weight: 400;
-    font-size: clamp(2.6rem, 8.5vw, 6.5rem);
+    font-size: clamp(2.6rem, 8.5vw, 5.5rem);
     line-height: 1.25;
     color: #fff;
 }
-
-/* Trace fantôme : le texte complet, très discret, pour voir ce qui vient */
-.quote__ghost {
-    position: absolute;
-    inset: 0;
-    color: rgba(255, 255, 255, 0.14);
-    pointer-events: none;
-    user-select: none;
-}
-
-/* Chaque mot est révélé de gauche à droite */
 .quote__word {
     display: inline-block;
-    position: relative;
-    will-change: clip-path, transform;
+    padding: 0 0.12em;
+    opacity: 0;
+    clip-path: inset(-0.3em 100% -0.3em -0.3em);
+    animation: quoteWrite 0.7s ease forwards;
+}
+@keyframes quoteWrite {
+    from { opacity: 1; clip-path: inset(-0.3em 100% -0.3em -0.3em); }
+    to   { opacity: 1; clip-path: inset(-0.3em -0.3em -0.3em -0.3em); }
 }
 
-/* Plume : point lumineux orange qui avance sur l'écriture */
-.quote__nib {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    margin: -5px 0 0 -5px;
-    border-radius: 50%;
-    background: #C47B3A;
-    box-shadow:
-            0 0 0 4px rgba(196, 123, 58, 0.25),
-            0 0 18px 6px rgba(196, 123, 58, 0.6);
-    pointer-events: none;
-}
-
-/* ---- Pied : trait calligraphique et auteur ---- */
+/* ---- Pied : bâtiment qui se dessine et auteur ---- */
 .quote__foot {
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
-    will-change: transform, opacity;
+    gap: 0.75rem;
 }
-.quote__flourish {
-    width: min(320px, 70vw);
-    height: auto;
-    overflow: visible;
-}
-.quote__flourish path {
-    fill: none;
-    stroke: #C47B3A;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-dasharray: 1;
+
+@media (max-width: 480px) {
+    .quote__veil { padding: 4rem 1.25rem; }
+    .quote__foot { margin-top: 1.5rem; }
 }
 .quote__by {
     font-family: 'Space Grotesk', sans-serif;
@@ -131,15 +81,75 @@
     color: rgba(255, 255, 255, 0.75);
 }
 
-/* ---- Réduction des animations : citation affichée entière, sans épinglage ---- */
+/* ---- Réduction des animations : texte et bâtiment affichés entièrement ---- */
 @media (prefers-reduced-motion: reduce) {
-    .quote { height: auto !important; }
-    .quote__sticky {
-        position: relative;
-        height: auto;
-        min-height: 70vh;
-        padding: 6rem 0;
+    .quote__content { animation: none; }
+    .quote__word {
+        animation: none;
+        opacity: 1;
+        clip-path: none;
     }
-    .quote__word { clip-path: none !important; transform: none !important; }
-    .quote__flourish path { stroke-dashoffset: 0 !important; }
+}
+
+/* ---- Bâtiment : séquence de tracé, remplissage, pop de la pointe, flottement ---- */
+.quote__flourish {
+    width: clamp(72px, 26vw, 130px);
+    aspect-ratio: 1 / 1;
+    height: auto;
+    overflow: visible;
+    filter: drop-shadow(0 0 12px rgba(196, 123, 58, 0.25));
+    animation: qfFloat 5s ease-in-out 5.2s infinite;
+}
+@keyframes qfFloat {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-4px); }
+}
+
+/* Chaque trait se dessine après le texte (3,6 s), avec son propre retard */
+.qf {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation:
+            qfDraw 1s cubic-bezier(0.65, 0, 0.35, 1) forwards,
+            qfFill 1.2s ease forwards;
+    animation-delay:
+            calc(3.6s + var(--d)),
+            calc(3.6s + var(--d) + 0.8s);
+}
+@keyframes qfDraw {
+    to { stroke-dashoffset: 0; }
+}
+/* Le remplissage apparaît une fois le contour tracé */
+@keyframes qfFill {
+    from { fill: rgba(196, 123, 58, 0); }
+    to   { fill: rgba(196, 123, 58, 0.14); }
+}
+
+/* Le point lumineux du sommet apparaît en rebondissant */
+.qf-cap {
+    fill: #C47B3A;
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: qfPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    animation-delay: calc(3.6s + var(--d));
+}
+@keyframes qfPop {
+    from { opacity: 0; transform: scale(0); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+/* ---- Réduction des animations : bâtiment affiché entièrement ---- */
+@media (prefers-reduced-motion: reduce) {
+    .quote__flourish { animation: none; }
+    .qf {
+        animation: none;
+        stroke-dashoffset: 0;
+        fill: rgba(196, 123, 58, 0.14);
+    }
+    .qf-cap {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
 }

@@ -20,16 +20,17 @@
 	flex: 1;
 	min-width: 0;
 }
+
+.ml-line:last-child { margin-bottom: 0; }
+
 .ml-title {
 	font-size: 0.72rem;
 	letter-spacing: 0.15em;
 	text-transform: uppercase;
 	color: #6b7280;
-	margin-bottom: 0.9rem;
+	margin-bottom: 1.25rem;
 }
-.dark .ml-title {
-	color: #8a8a8a;
-}
+.dark .ml-title { color: #8a8a8a; }
 .ml-desc {
 	font-size: 0.85rem;
 	line-height: 1.6;
@@ -83,12 +84,15 @@
 }
 .dark .ml-dot {
 	background: #262624;
+	border-color: #ffffff;
 }
 .ml-dot--on {
-	background: #007852;
-	border-color: #007852;
+	background: var(--line);
+	border-color: var(--line);
 	transform: scale(1.2);
 }
+
+/* Station du Carré (Vaugirard) : orange, avec halo */
 .ml-dot--home {
 	width: 14px;
 	height: 14px;
@@ -98,6 +102,17 @@
 	background: #c47b3a;
 	border-color: #c47b3a;
 }
+
+.dark .ml-dot--on {
+	background: #ffffff;
+	border-color: #4a4a46;
+}
+
+.dark .ml-dot--home.ml-dot--on {
+	background: #c47b3a;
+	border-color: #4a4a46;
+}
+
 .ml-dot--home::after {
 	content: '';
 	position: absolute;
@@ -146,14 +161,14 @@
 	width: 28px;
 	height: 16px;
 	border-radius: 999px;
-	background: #007852;
+	background: var(--line);
 	color: #fff;
 	font-family: 'Space Grotesk', sans-serif;
 	font-size: 0.6rem;
 	font-weight: 700;
 	line-height: 16px;
 	text-align: center;
-	box-shadow: 0 4px 12px rgba(0, 120, 82, 0.45);
+	box-shadow: 0 4px 12px color-mix(in srgb, var(--line) 45%, transparent);
 	opacity: 0;
 }
 .ml--animated.ml--in .ml-train {
@@ -265,6 +280,8 @@
 	aspect-ratio: 1 / 1;
 	border-radius: 50%;
 	overflow: hidden;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	box-sizing: border-box;
 }
 .ml-near .ml-logo-box {
 	width: clamp(36px, 10vw, 48px);

@@ -90,9 +90,22 @@
 	border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 	padding-bottom: 4px;
 	width: fit-content;
-	/*color: #fff;*/
 }
 .hero__cta:hover {
+	border-color: var(--accent);
+	color: var(--accent);
+}
+
+.hero__cta__without_margin_top {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 14px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+	padding-bottom: 4px;
+	width: fit-content;
+}
+.hero__cta__without_margin_top:hover {
 	border-color: var(--accent);
 	color: var(--accent);
 }
@@ -331,21 +344,29 @@
 
 /* ---- RSE ---- */
 .rse {
-	padding: 7rem 1.5rem;
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
 	max-width: 90rem;
 	margin: 0 auto;
 }
 @media (min-width: 768px) {
-	.rse { padding: 7rem 3rem; }
+	.rse {
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+		padding-left: 3rem;
+		padding-right: 3rem;
+	}
 }
 .rse__inner {
 	display: grid;
 	grid-template-columns: 1fr;
-	gap: 3.5rem;
+	gap: 2.5rem;
 }
 @media (min-width: 900px) {
-	.rse__inner { grid-template-columns: 5fr 7fr; gap: 6rem; }
-	.rse__side { position: sticky; top: 7rem; align-self: start; }
+	.rse__inner { grid-template-columns: 4fr 3fr; }
+	/*.rse__side { position: sticky; top: 7rem; align-self: start; }*/
 }
 
 .rse__eyebrow {
@@ -424,17 +445,14 @@
 
 /* RSE cart */
 /* ---- Tuiles d'engagements : icône + titre court, sans description ---- */
-.rse__tiles {
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: 0.75rem;
-}
+
 
 .rse__tile {
 	display: flex;
 	align-items: center;
-	gap: 1rem;
-	padding: 1.1rem 1.25rem;
+	gap: 1.1rem;
+	min-height: 4.5rem;
+	padding: 1.25rem 1.5rem;
 	border-radius: 16px;
 	border: 1px solid rgba(0, 0, 0, 0.1);
 	background: rgba(0, 0, 0, 0.02);
@@ -446,7 +464,7 @@
 	background: rgba(255, 255, 255, 0.03);
 }
 .rse__tile:hover {
-	transform: translateY(-3px);
+	transform: translateX(6px);
 	border-color: #C47B3A;
 }
 
@@ -464,9 +482,26 @@
 
 .rse__label {
 	font-family: 'Space Grotesk', sans-serif;
-	font-size: 0.95rem;
+	font-size: clamp(1rem, 1.6vw, 1.15rem);
 	font-weight: 600;
 	line-height: 1.3;
+}
+
+/* Pas d'étirement vertical : les tuiles restent collées entre elles */
+.rse__inner {
+	align-items: start;
+}
+.rse__tiles {
+	align-self: start;
+	align-content: start;
+	grid-auto-rows: auto;
+	gap: 0.9rem;
+}
+/* Chaque tuile est enveloppée par Reveal : le wrapper ne doit pas s'étirer */
+.rse__tiles > * {
+	display: block;
+	height: auto;
+	padding-bottom: 10%;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -922,7 +957,7 @@
 }
 @media (min-width: 1024px) {
 	.svc-grid {
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(3, 1fr);
 	}
 }
 .svc-card {
